@@ -94,7 +94,7 @@
                                         $submenu=$arry_static_list['submenu'];
                                         if(empty(count($submenu))){
                                             echo '
-                                                <li class="nav-item"><a class="nav-link" href="'.$menu_url.'">'.$menu_label.'</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="'.$base_url.''.$menu_url.'">'.$menu_label.'</a></li>
                                             ';
                                         }else{
                                             echo '<li class="nav-item">';
@@ -105,7 +105,7 @@
                                             foreach($submenu as $submenu_list){
                                                 $submenu_label=$submenu_list['label'];
                                                 $submenu_url=$submenu_list['url'];
-                                                echo '<a class="nav-link" href="'.$submenu_url.'">'.$submenu_label.'</a>';
+                                                echo '<a class="nav-link" href="'.$base_url.''.$submenu_url.'">'.$submenu_label.'</a>';
                                             }
                                             echo '  </div>';
                                             echo '</li>';
@@ -129,7 +129,7 @@
                                     $submenu=$arry_static_list['submenu'];
                                     if(empty(count($submenu))){
                                         echo '
-                                            <li class="nav-item"><a class="nav-link" href="'.$menu_url.'">'.$menu_label.'</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="'.$base_url.''.$menu_url.'">'.$menu_label.'</a></li>
                                         ';
                                     }else{
                                         echo '<li class="nav-item dropdown">';
@@ -140,7 +140,7 @@
                                             $submenu_url=$submenu_list['url'];
                                             echo '
                                                 <li>
-                                                    <a class="dropdown-item" href="'.$submenu_url.'">'.$submenu_label.'</a>
+                                                    <a class="dropdown-item" href="'.$base_url.''.$submenu_url.'">'.$submenu_label.'</a>
                                                 </li>
                                             ';
                                         }
@@ -185,47 +185,70 @@
                 <div class="row text-white">
                     <!-- Link Eksternal -->
                     <div class="col-md-3 mb-3">
-                        <h5 class="text-decoration-underline">Tautan Lainnya</h5>
+                        <h5 class="text-decoration-underline"><?php echo $setting_tautan_lainnya_title; ?></h5>
                         <ul class="">
-                            <li><a href="https://kemkes.go.id" class="footer-link" target="_blank">Hubungi Kami</a></li>
-                            <li><a href="https://kemkes.go.id" class="footer-link" target="_blank">FAQ</a></li>
-                            <li><a href="https://kemkes.go.id" class="footer-link" target="_blank">Syarat & Ketentuan</a></li>
-                            <li><a href="https://kemkes.go.id" class="footer-link" target="_blank">Kebijakan Privasi</a></li>
-                            <li><a href="https://kemkes.go.id" class="footer-link" target="_blank">Peta Situs</a></li>
+                            <?php
+                                if(!empty(count($setting_tautan_lainnya_list))){
+                                    foreach ($setting_tautan_lainnya_list as $tautan_lainnya_list) {
+                                        $label_tautan_lainnya=$tautan_lainnya_list['label'];
+                                        $target_tautan_lainnya=$tautan_lainnya_list['target'];
+                                        $url_tautan_lainnya=$tautan_lainnya_list['url'];
+                                        echo '
+                                            <li>
+                                                <a href="'.$url_tautan_lainnya.'" class="footer-link" target="'.$target_tautan_lainnya.'">
+                                                    '.$label_tautan_lainnya.'
+                                                </a>
+                                            </li>
+                                        ';
+                                    }
+                                }
+                            ?>
                         </ul>
                     </div>
                     <!-- Kontak -->
                     <div class="col-md-3 mb-3">
-                        <h5 class="text-decoration-underline">Kontak</h5>
+                        <h5 class="text-decoration-underline"><?php echo $setting_kontak_title; ?></h5>
                         <!-- Tambahan Kontak -->
                         <div class="contact-info">
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-telephone me-2"></i>
-                                <span>(0232) 1234567</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-whatsapp me-2"></i>
-                                <span>0812 3456 7890</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-envelope me-2"></i>
-                                <span>info@rsuelsyifa.co.id</span>
-                            </div>
+                            <?php
+                                if(!empty(count($setting_kontak_list))){
+                                    foreach ($setting_kontak_list as $list_kontak) {
+                                        $kontak_icon=$list_kontak['icon'];
+                                        $kontak_value=$list_kontak['value'];
+                                        echo '
+                                            <div class="d-flex align-items-center mb-2">
+                                                '.$kontak_icon.'
+                                                <span>'.$kontak_value.'</span>
+                                            </div>
+                                        ';
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                     <!-- Alamat -->
                     <div class="col-md-3 mb-3">
-                        <h5 class="text-decoration-underline">Alamat</h5>
-                        <p>Jalan RE Martadinata No 128 Kelurahan Ancaran, Kecamatan Kuningan, Kabupaten Kuningan, Jawa Barat.</p>
+                        <h5 class="text-decoration-underline"><?php echo $setting_alamat_title; ?></h5>
+                        <p><?php echo $setting_alamat_value; ?></p>
                     </div>
                     <!-- Media Sosial -->
                     <div class="col-md-3 mb-3">
-                        <h5 class="text-decoration-underline">Media Sosial</h5>
+                        <h5 class="text-decoration-underline"><?php echo $setting_media_sosial_title; ?></h5>
                         <div class="social-media">
-                            <a href="#" class="social-circle"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="social-circle"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
+                            <?php
+                                if(!empty(count($setting_media_sosial_list))){
+                                    foreach ($setting_media_sosial_list as $medsos_list) {
+                                        $medsos_url=$medsos_list['url'];
+                                        $medsos_icon=$medsos_list['icon'];
+                                        $medsos_order=$medsos_list['order'];
+                                        echo '
+                                            <a href="'.$medsos_url.'" class="social-circle">
+                                                '.$medsos_icon.'
+                                            </a>
+                                        ';
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

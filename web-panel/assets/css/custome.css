@@ -3,7 +3,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-   background-color: #034C53; /* Hijau tua */
+   background-color: #009788; /* Hijau tua */
   color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -71,7 +71,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #bac9c2;
+    background-color: #eef8f3;
 }
 
 /* MAIN */
@@ -809,7 +809,7 @@ iframe {
 /* FOOTER CONTENT */
 /* Footer styling */
 .footer {
-    background-color: #034C53;
+    background-color: #009788;
     color: #ffffff;
 }
 
@@ -1241,7 +1241,7 @@ iframe {
     }
 
     .pagging .btn-outline-primary {
-        border: 2px dashed #1e90ff;
+        border: none;
         background-color: #f5faff;
         color: #1e90ff;
         cursor: default;
@@ -1316,3 +1316,69 @@ iframe {
             padding: 0 14px;
         }
     }
+
+
+    /* BADGE */
+    /* Style untuk container tags */
+.d-flex.flex-wrap.gap-2 {
+    gap: 0.75rem !important;
+}
+
+/* Base style untuk badge tag */
+.badge {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 1rem !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+/* Style untuk badge tag biasa */
+.bg-primary {
+    background: linear-gradient(135deg, #6a8cff 0%, #4d6df1 100%) !important;
+    color: white !important;
+}
+
+/* Style untuk badge tag aktif */
+.bg-dark {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+    color: white !important;
+}
+
+/* Style untuk badge jumlah */
+.badge .badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+    margin-left: 0.35rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #2d3748 !important;
+}
+
+/* Hover effect */
+.badge:not(.bg-dark):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+/* Style khusus untuk tombol "Semua" */
+a[href="Blog"].badge {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.9rem !important;
+    }
+}

@@ -46,6 +46,7 @@
                                 </div>
                             ';
                         }
+                        //BLOG CONTENT LIST
                         echo '
                             <div class="row">
                                 <div class="col-md-12" id="show_list_blog">
@@ -54,7 +55,7 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-12 mb-4 text-center">
-                                    <div class="btn-group">
+                                    <div class="btn-group pagging">
                                         <button type="button" class="btn btn-primary" id="prev_button">
                                             <i class="bi bi-chevron-left"></i>
                                         </button>
@@ -208,7 +209,7 @@
                     </div>
                     <div class="col-12">
                         <form action="">
-                            <div class="input-group">
+                            <div class="input-group search">
                                 <input type="text" name="keyword" class="form-control" placeholder="Judul/Deskripsi">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="bi bi-search"></i>
@@ -250,7 +251,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col-md-12">
-                        <h4>Tag/Kategori</h4>
+                        <h5 class="mb-3">Tag/Kategori</h5>
                     </div>
                     <div class="col-12">
                         <div class="d-flex flex-wrap gap-2">
@@ -300,7 +301,7 @@
                     <div class="popular-posts">
                         <h5 class="mb-3">Popular Post</h5>
                         <?php
-                            $sql_popular = "SELECT b.id_blog, b.title_blog, b.cover, COUNT(v.id_blog) AS jumlah_view
+                            $sql_popular = "SELECT b.id_blog, b.datetime_creat, b.title_blog, b.cover, COUNT(v.id_blog) AS jumlah_view
                                             FROM blog b
                                             LEFT JOIN blog_viewer v ON v.id_blog = b.id_blog
                                             WHERE b.publish = 1
@@ -313,6 +314,7 @@
 
                             if (count($popular_list) > 0) {
                                 foreach ($popular_list as $row) {
+                                    $datetime_creat = date('d/m/Y H:i T', strtotime($row['datetime_creat']));
                                     $title = htmlspecialchars($row['title_blog']);
                                     $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row['cover'];
                                     $id_blog = $row['id_blog'];
@@ -328,12 +330,59 @@
                                             <a href="<?= $url ?>" class="text-decoration-none text-dark fw-semibold">
                                                 <?= $title ?>
                                             </a>
+                                            <p>
+                                                <small class="text text-secondary">
+                                                    <?php echo $datetime_creat; ?>
+                                                </small>
+                                            </p>
                                         </div>
                                     </div>
                                     <?php
                                 }
                             } else {
                                 echo "<p class='text-muted'>Belum ada postingan populer.</p>";
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class="row mb-4 border-1 border-top">
+                    <div class="popular-posts mt-4">
+                        <h5 class="mb-3">New Post</h5>
+                        <?php
+                            $sql_new = "SELECT id_blog, datetime_creat, title_blog, cover FROM blog ORDER BY datetime_creat DESC LIMIT 5";
+                            $stmt_new = $Conn->prepare($sql_new);
+                            $stmt_new->execute();
+                            $new_list = $stmt_new->fetchAll();
+
+                            if (count($new_list) > 0) {
+                                foreach ($new_list as $row_post) {
+                                    $datetime_creat = date('d/m/Y H:i T', strtotime($row_post['datetime_creat']));
+                                    $title = htmlspecialchars($row_post['title_blog']);
+                                    $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row_post['cover'];
+                                    $id_blog = $row_post['id_blog'];
+                                    $url = $base_url . '/Blog?id=' . $id_blog;
+                                    ?>
+                                        <div class="d-flex mb-3">
+                                            <div style="flex: 0 0 80px;">
+                                                <a href="<?= $url ?>">
+                                                    <img src="<?= $cover ?>" alt="cover" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+                                                </a>
+                                            </div>
+                                            <div class="ps-3">
+                                                <a href="<?= $url ?>" class="text-decoration-none text-dark fw-semibold">
+                                                    <?= $title ?>
+                                                </a>
+                                                <p>
+                                                    <small class="text text-secondary">
+                                                        <?php echo $datetime_creat; ?>
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    <?php
+                                }
+                            } else {
+                                echo "<p class='text-muted'>Belum ada postingan.</p>";
                             }
                         ?>
                     </div>

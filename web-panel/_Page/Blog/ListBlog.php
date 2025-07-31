@@ -79,19 +79,36 @@ if (count($berita_list) > 0) {
         $title_blog = $berita_artikel['title_blog'];
         $cover_image = 'image_proxy.php?segment=Artikel&image_name=' . $berita_artikel['cover'];
         $deskripsi_blog = $berita_artikel['deskripsi'];
-        ?>
+        // Ambil tag/kategori
+        $sql_tag = "SELECT blog_tag FROM blog_tag WHERE id_blog = :id_blog";
+        $stmt_tag = $Conn->prepare($sql_tag);
+        $stmt_tag->execute([':id_blog' => $id_blog]);
+        $tags = $stmt_tag->fetchAll(PDO::FETCH_COLUMN);
+?>
         <div class="d-flex mb-4 border-bottom pb-3">
             <div class="me-3" style="flex: 0 0 150px;">
                 <img src="<?= $cover_image ?>" alt="Cover" class="img-fluid" style="width: 150px; height: 150px; object-fit: cover; border-radius: 5px;">
             </div>
             <div>
-                <h5 class="fw-bold mb-1"><?= htmlspecialchars($title_blog) ?></h5>
+                <h5 class="fw-bold mb-1">
+                    <a href="Blog?id=<?= $id_blog ?>" class="text text-dark text-decoration-none">
+                        <?= htmlspecialchars($title_blog) ?>
+                    </a>
+                </h5>
                 <p class="mb-1"><?= nl2br(htmlspecialchars($deskripsi_blog)) ?></p>
                 <small class="text-muted"><?= $date_time_creat_blog ?></small><br>
-                <a href="Blog?id=<?= $id_blog ?>">Baca Selengkapnya</a>
+                <?php if (!empty($tags)) : ?>
+                    <div class="mt-1">
+                        <small class="text-muted">Tag: 
+                            <?php foreach ($tags as $tag): ?>
+                                <span class="label label-secondary"><?= htmlspecialchars($tag) ?></span>,
+                            <?php endforeach; ?>
+                        </small>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
-        <?php
+<?php
     }
 } else {
     echo '<p class="text-muted">Belum ada artikel yang tersedia.</p>';

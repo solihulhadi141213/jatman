@@ -102,6 +102,46 @@
             $setting_berita_artikel_subtitle="";
             $setting_berita_artikel_limit="";
         }
+
+        //Variabel Tautan Lainnya
+        if(!empty($arry_static['tautan_lainnya'])){
+            $setting_tautan_lainnya_title=$arry_static['tautan_lainnya']['title'];
+            $setting_tautan_lainnya_list=$arry_static['tautan_lainnya']['list'];
+        }else{
+            //Empty Tautan Lainnya
+            $setting_tautan_lainnya_title="";
+            $setting_tautan_lainnya_list="";
+        }
+
+        //Variabel kontak
+        if(!empty($arry_static['kontak'])){
+            $setting_kontak_title=$arry_static['kontak']['title'];
+            $setting_kontak_list=$arry_static['kontak']['list'];
+        }else{
+            //Empty kontak
+            $setting_kontak_title="";
+            $setting_kontak_list="";
+        }
+
+        //Variabel alamat
+        if(!empty($arry_static['alamat'])){
+            $setting_alamat_title=$arry_static['alamat']['title'];
+            $setting_alamat_value=$arry_static['alamat']['value'];
+        }else{
+            //Empty alamat
+            $setting_alamat_title="";
+            $setting_alamat_value="";
+        }
+
+        //Variabel Media Sosial
+        if(!empty($arry_static['media_sosial'])){
+            $setting_media_sosial_title=$arry_static['media_sosial']['title'];
+            $setting_media_sosial_list=$arry_static['media_sosial']['list'];
+        }else{
+            //Empty Media Sosial
+            $setting_media_sosial_title="";
+            $setting_media_sosial_list="";
+        }
     }else{
         //Empty Meta Tag
         $setting_type="";
@@ -148,6 +188,22 @@
         $setting_info_grafis_title="";
         $setting_info_grafis_bg_image="";
         $setting_info_grafis_list_content="";
+
+        //Empty Tautan Lainnya
+        $setting_tautan_lainnya_title="";
+        $setting_tautan_lainnya_list="";
+
+        //Empty kontak
+        $setting_kontak_title="";
+        $setting_kontak_list="";
+
+         //Empty alamat
+        $setting_alamat_title="";
+        $setting_alamat_value="";
+
+        //Empty Media Sosial
+        $setting_media_sosial_title="";
+        $setting_media_sosial_list="";
     }
 
 ?>

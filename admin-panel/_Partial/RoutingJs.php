@@ -8,6 +8,7 @@
         // Routing Javascript Berdasarkan Halaman
         $scripts = [
             "MyProfile"                 => "_Page/MyProfile/MyProfile.js",
+            "AksesFitur"                => "_Page/AksesFitur/AksesFitur.js",
             "Akses"                     => "_Page/Akses/Akses.js",
             "SettingGeneral"            => "_Page/SettingGeneral/SettingGeneral.js",
             "EntitasAkses"              => "_Page/EntitasAkses/EntitasAkses.js",

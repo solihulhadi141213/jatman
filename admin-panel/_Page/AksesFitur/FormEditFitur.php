@@ -25,10 +25,15 @@
                 <input type="text" class="form-control" name="kategori" list="ListKategori2" value="<?php echo $KategoriFitur; ?>">
                 <datalist id="ListKategori2">
                     <?php
-                        $query = mysqli_query($Conn, "SELECT DISTINCT kategori FROM akses_fitur ORDER BY kategori ASC");
-                        while ($data = mysqli_fetch_array($query)) {
-                            $kategori= $data['kategori'];
-                            echo '<option value="'.$kategori.'">';
+                        try {
+                            $stmt = $Conn->prepare("SELECT DISTINCT kategori FROM akses_fitur ORDER BY kategori ASC");
+                            $stmt->execute();
+                            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                $kategori = htmlspecialchars($data['kategori']);
+                                echo '<option value="' . $kategori . '">';
+                            }
+                        } catch (PDOException $e) {
+                            echo '<option disabled>Error: ' . $e->getMessage() . '</option>';
                         }
                     ?>
                 </datalist>

@@ -93,25 +93,33 @@
 
     
     //Loging
-    function addLog($Conn,$id_akses,$datetime_log,$kategori_log,$deskripsi_log){
-        $entry="INSERT INTO log (
-            id_akses,
-            datetime_log,
-            kategori_log,
-            deskripsi_log
-        ) VALUES (
-            '$id_akses',
-            '$datetime_log',
-            '$kategori_log',
-            '$deskripsi_log'
-        )";
-        $Input=mysqli_query($Conn, $entry);
-        if($Input){
-            $Response="Success";
-        }else{
-            $Response="Input Log Gagal";
+    function addLog($Conn, $id_akses, $datetime_log, $kategori_log, $deskripsi_log) {
+        try {
+            $sql = "INSERT INTO log (
+                id_akses,
+                datetime_log,
+                kategori_log,
+                deskripsi_log
+            ) VALUES (
+                :id_akses,
+                :datetime_log,
+                :kategori_log,
+                :deskripsi_log
+            )";
+            
+            $stmt = $Conn->prepare($sql);
+            $stmt->bindParam(':id_akses', $id_akses);
+            $stmt->bindParam(':datetime_log', $datetime_log);
+            $stmt->bindParam(':kategori_log', $kategori_log);
+            $stmt->bindParam(':deskripsi_log', $deskripsi_log);
+            
+            $stmt->execute();
+            
+            return "Success";
+        } catch (PDOException $e) {
+            // Anda bisa menambahkan logging error di sini jika diperlukan
+            return "Input Log Gagal: " . $e->getMessage();
         }
-        return $Response;
     }
     
     //Membuat Randome Number

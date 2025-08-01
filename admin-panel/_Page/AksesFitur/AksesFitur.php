@@ -40,17 +40,12 @@
                     <div class="card-header">
                         <form action="javascript:void(0);" id="ProsesBatas">
                             <div class="row">
-                                <div class="col-12 col-md-8 mb-3">
-                                    
-                                </div>
-                                <div class="col-6 col-md-2 mb-3">
-                                    <button type="button" class="btn btn-md btn-outline-dark btn-block btn-rounded" data-bs-toggle="modal" data-bs-target="#ModalFilter">
-                                        <i class="bi bi-funnel"></i> Filter
+                                <div class="col-12 mb-3 text-end">
+                                    <button type="button" class="btn btn-md btn-secondary btn-floating" data-bs-toggle="modal" data-bs-target="#ModalFilter">
+                                        <i class="bi bi-funnel"></i>
                                     </button>
-                                </div>
-                                <div class="col-6 col-md-2 mb-3">
-                                    <button type="button" class="btn btn-md btn-primary btn-block btn-rounded" data-bs-toggle="modal" data-bs-target="#ModalTambahFitur">
-                                        <i class="bi bi-plus"></i> Tambah
+                                    <button type="button" class="btn btn-md btn-primary btn-floating" data-bs-toggle="modal" data-bs-target="#ModalTambahFitur">
+                                        <i class="bi bi-plus"></i>
                                     </button>
                                 </div>
                             </div>

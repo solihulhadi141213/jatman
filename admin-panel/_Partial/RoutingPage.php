@@ -5,10 +5,11 @@
         $Page=$_GET['Page'];
         //Index Halaman
         $page_arry=[
+            "MyProfile"         =>  "_Page/MyProfile/MyProfile.php",
+            "AksesFitur"        =>  "_Page/AksesFitur/AksesFitur.php",
             "Akses"             =>  "_Page/Akses/Akses.php",
             "SettingGeneral"    =>  "_Page/SettingGeneral/SettingGeneral.php",
             "EntitasAkses"      =>  "_Page/EntitasAkses/EntitasAkses.php",
-            "MyProfile"         =>  "_Page/MyProfile/MyProfile.php",
             "Help"              =>  "_Page/Help/Help.php",
             "SettingEmail"      =>  "_Page/SettingService/SettingService.php",
             "Aktivitas"         =>  "_Page/Aktivitas/Aktivitas.php",

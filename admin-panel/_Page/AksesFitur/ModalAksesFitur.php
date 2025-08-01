@@ -9,9 +9,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 mt-3">
-                            <label for="batas">Data</label>
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <label for="batas">
+                                <small>Limit/Batas</small>
+                            </label>
+                        </div>
+                        <div class="col-8">
                             <select name="batas" id="batas" class="form-control">
                                 <option value="5">5</option>
                                 <option selected value="10">10</option>
@@ -22,8 +26,14 @@
                                 <option value="500">500</option>
                             </select>
                         </div>
-                        <div class="col-md-6 mt-3">
-                            <label for="OrderBy">Mode Urutan</label>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <label for="OrderBy">
+                                <small>Mode Urutan</small>
+                            </label>
+                        </div>
+                        <div class="col-8">
                             <select name="OrderBy" id="OrderBy" class="form-control">
                                 <option value="">Pilih</option>
                                 <option value="kategori">Kategori</option>
@@ -33,16 +43,26 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mt-3">
-                            <label for="ShortBy">Tipe Urutan</label>
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <label for="ShortBy">
+                                <small>Tipe Urutan</small>
+                            </label>
+                        </div>
+                        <div class="col-8">
                             <select name="ShortBy" id="ShortBy" class="form-control">
                                 <option value="ASC">A To Z</option>
                                 <option selected value="DESC">Z To A</option>
                             </select>
                         </div>
-                        <div class="col-md-6 mt-3">
-                            <label for="KeywordBy">Pencarian</label>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <label for="KeywordBy">
+                                <small>Pencarian</small>
+                            </label>
+                        </div>
+                        <div class="col-8">
                             <select name="KeywordBy" id="KeywordBy" class="form-control">
                                 <option value="">Pilih</option>
                                 <option value="kategori">Kategori</option>
@@ -52,9 +72,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 mt-3" id="FormFilter">
-                            <label for="keyword">Kata Kunci Pencarian</label>
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <label for="keyword">
+                                <small>Kata Kunci</small>
+                            </label>
+                        </div>
+                        <div class="col-8" id="FormFilter">
                             <input type="text" name="keyword" id="keyword" class="form-control">
                         </div>
                     </div>
@@ -92,10 +116,15 @@
                             <input type="text" class="form-control" name="kategori" id="kategori" list="ListKategori">
                             <datalist id="ListKategori">
                                 <?php
-                                    $query = mysqli_query($Conn, "SELECT DISTINCT kategori FROM akses_fitur ORDER BY kategori ASC");
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        $kategori= $data['kategori'];
-                                        echo '<option value="'.$kategori.'">';
+                                    try {
+                                        $stmt = $Conn->prepare("SELECT DISTINCT kategori FROM akses_fitur ORDER BY kategori ASC");
+                                        $stmt->execute();
+                                        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                            $kategori = htmlspecialchars($data['kategori']);
+                                            echo '<option value="' . $kategori . '">';
+                                        }
+                                    } catch (PDOException $e) {
+                                        echo '<option disabled>Error: ' . $e->getMessage() . '</option>';
                                     }
                                 ?>
                             </datalist>
@@ -179,7 +208,7 @@
         <div class="modal-content">
             <form action="javascript:void(0);" id="ProsesEditFitur" autocomplete="off">
                 <div class="modal-header">
-                    <h5 class="modal-title text-dark"><i class="bi bi-pencil"></i> Edit Fitur</h5>
+                    <h5 class="modal-title text-dark"><i class="bi bi-pencil"></i> Edit Fitur Aplikasi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

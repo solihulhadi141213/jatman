@@ -72,7 +72,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3 mb-3 text-center">
-                            <img src="assets/img/User/<?php echo "$SessionGambar"; ?>" alt="" width="70%" class="rounded-circle">
+                            <img src="<?php echo 'image_proxy.php?dir=User&filename='.$SessionGambar.''; ?>" alt="" width="70%" class="rounded-circle">
                         </div>
                         <div class="col-md-9 mb-3">
                             <div class="row mb-2">

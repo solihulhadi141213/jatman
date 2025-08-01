@@ -8,13 +8,13 @@
     <div class="pagetitle">
         <h1>
             <a href="">
-                <i class="bi bi-layers"></i> Entitas Pengurus</a>
+                <i class="bi bi-layers"></i> Entitas Akses</a>
             </a>
         </h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                <li class="breadcrumb-item active">Entitas Pengurus</li>
+                <li class="breadcrumb-item active">Entitas Akses</li>
             </ol>
         </nav>
     </div>
@@ -33,29 +33,60 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 mb-3">
                 <div class="card">
                     <div class="card-header">
                         <form action="javascript:void(0);" id="ProsesBatas">
                             <div class="row">
-                                <div class="col-md-8 mb-3">
-                                    
-                                </div>
-                                <div class="col-md-2 mb-3">
-                                    <button type="button" class="btn btn-md btn-outline-dark btn-block btn-rounded" data-bs-toggle="modal" data-bs-target="#ModalFilter">
-                                        <i class="bi bi-funnel"></i> Filter
+                                <div class="col-12 mb-3 text-end">
+                                    <button type="button" class="btn btn-md btn-outline-dark btn-floating" data-bs-toggle="modal" data-bs-target="#ModalFilter">
+                                        <i class="bi bi-funnel"></i>
                                     </button>
-                                </div>
-                                <div class="col-md-2 mb-3">
-                                    <button type="button" class="btn btn-md btn-primary btn-block btn-rounded" data-bs-toggle="modal" data-bs-target="#ModalTambahAksesEntitas">
-                                        <i class="bi bi-plus"></i> Tambah
+                                     <button type="button" class="btn btn-md btn-primary btn-floating" data-bs-toggle="modal" data-bs-target="#ModalTambahAksesEntitas">
+                                        <i class="bi bi-plus"></i>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="card-body" id="MenampilkanTabelAksesEntitas">
-
+                    <div class="card-body" >
+                        <div class="table table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th align="center"><b>No</b></th>
+                                        <th align="center"><b>Entitias</b></th>
+                                        <th align="center"><b>Pengguna</b></th>
+                                        <th align="center"><b>Role</b></th>
+                                        <th align="center"><b>Opsi</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="MenampilkanTabelAksesEntitas">
+                                    <tr>
+                                        <td colspan="5" align="center">
+                                            <small class="text-danger">Tidak Ada Data Fitur Yang Ditampilkan!</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6">
+                                <small id="page_info">
+                                    Page 1 Of 100
+                                </small>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class="btn btn-sm btn-outline-info btn-floating" id="prev_button">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-info btn-floating" id="next_button">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

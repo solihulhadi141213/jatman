@@ -31,12 +31,12 @@
                 </li>
                 <li>
                     <a href="index.php?Page=AksesEntitas" class="<?php if($PageMenu=="AksesEntitas"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Entitas Pengurus</span>
+                        <i class="bi bi-circle"></i><span>Entitas Akses</span>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?Page=Akses" class="<?php if($PageMenu=="Akses"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Akses Pengurus</span>
+                        <i class="bi bi-circle"></i><span>Akun Akses</span>
                     </a>
                 </li>
             </ul>

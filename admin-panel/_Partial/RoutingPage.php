@@ -7,6 +7,7 @@
         $page_arry=[
             "MyProfile"         =>  "_Page/MyProfile/MyProfile.php",
             "AksesFitur"        =>  "_Page/AksesFitur/AksesFitur.php",
+            "AksesEntitas"        =>  "_Page/AksesEntitas/AksesEntitas.php",
             "Akses"             =>  "_Page/Akses/Akses.php",
             "SettingGeneral"    =>  "_Page/SettingGeneral/SettingGeneral.php",
             "EntitasAkses"      =>  "_Page/EntitasAkses/EntitasAkses.php",

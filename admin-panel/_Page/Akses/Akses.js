@@ -21,8 +21,8 @@ $('#ProsesFilter').submit(function(){
     filterAndLoadTable();
     $('#ModalFilterAkses').modal('hide');
 });
-$('#keyword_by').change(function(){
-    var keyword_by =$('#keyword_by').val();
+$('#KeywordBy').change(function(){
+    var keyword_by =$('#KeywordBy').val();
     $.ajax({
         type 	    : 'POST',
         url 	    : '_Page/Akses/FormFilter.php',

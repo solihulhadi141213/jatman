@@ -8,11 +8,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <label for="batas">Data</label>
+                    <div class="row mb-2">
+                        <div class="col-4 mb-2">
+                            <label for="batas">
+                                <small>Limit/Batas</small>
+                            </label>
+                        </div>
+                        <div class="col-8 mb-2">
                             <select name="batas" id="batas" class="form-control">
-                                <option value="10">10</option>
+                                <option value="5">5</option>
+                                <option selected value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
@@ -20,9 +25,15 @@
                                 <option value="500">500</option>
                             </select>
                         </div>
-                        <div class="col-md-6 ">
-                            <label for="OrderBy">Mode Urutan</label>
-                            <select name="OrderBy" id="OrderBy" class="form-control">
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4 mb-2">
+                            <label for="OrderBy">
+                                <small>Mode Urutan</small>
+                            </label>
+                        </div>
+                        <div class="col-8 mb-2">
+                             <select name="OrderBy" id="OrderBy" class="form-control">
                                 <option value="">Pilih</option>
                                 <option value="nama_akses">Nama</option>
                                 <option value="kontak_akses">Nomor Kontak</option>
@@ -31,17 +42,27 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row  mb-3">
-                        <div class="col-md-6 ">
-                            <label for="ShortBy">Tipe Urutan</label>
+                    <div class="row mb-2">
+                        <div class="col-4 mb-2">
+                            <label for="ShortBy">
+                                <small>Tipe Urutan</small>
+                            </label>
+                        </div>
+                        <div class="col-8 mb-2">
                             <select name="ShortBy" id="ShortBy" class="form-control">
                                 <option value="ASC">A To Z</option>
-                                <option value="DESC">Z To A</option>
+                                <option selected value="DESC">Z To A</option>
                             </select>
                         </div>
-                        <div class="col-md-6 ">
-                            <label for="keyword_by">Pencarian</label>
-                            <select name="keyword_by" id="keyword_by" class="form-control">
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4 mb-2">
+                            <label for="KeywordBy">
+                                <small>Dasar Pencarian</small>
+                            </label>
+                        </div>
+                        <div class="col-8 mb-2">
+                            <select name="KeywordBy" id="KeywordBy" class="form-control">
                                 <option value="">Pilih</option>
                                 <option value="nama_akses">Nama</option>
                                 <option value="kontak_akses">Nomor Kontak</option>
@@ -50,9 +71,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row  mb-3">
-                        <div class="col-md-12 " id="FormFilter">
-                            <label for="keyword">Kata Kunci</label>
+                    <div class="row mb-2">
+                        <div class="col-4 mb-2">
+                            <label for="keyword">
+                                <small>Kata Kunci</small>
+                            </label>
+                        </div>
+                        <div class="col-8 mb-2" id="FormFilter">
                             <input type="text" name="keyword" id="keyword" class="form-control">
                         </div>
                     </div>

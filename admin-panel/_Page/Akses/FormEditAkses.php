@@ -1,6 +1,8 @@
 <?php
-    //Koneksi
+    //Zona Waktu
     date_default_timezone_set('Asia/Jakarta');
+
+    //Koneksi
     include "../../_Config/Connection.php";
     include "../../_Config/SettingGeneral.php";
     include "../../_Config/GlobalFunction.php";

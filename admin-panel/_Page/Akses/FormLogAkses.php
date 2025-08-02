@@ -22,78 +22,11 @@
             echo '</div>';
         }else{
             $id_akses=$_POST['id_akses'];
-            //Bersihkan Variabel
-            $id_akses=validateAndSanitizeInput($id_akses);
-            //Buka data askes
-            $nama_akses=GetDetailData($Conn,'akses','id_akses',$id_akses,'nama_akses');
-            $kontak_akses=GetDetailData($Conn,'akses','id_akses',$id_akses,'kontak_akses');
-            $email_akses=GetDetailData($Conn,'akses','id_akses',$id_akses,'email_akses');
-            $image_akses=GetDetailData($Conn,'akses','id_akses',$id_akses,'image_akses');
-            $akses=GetDetailData($Conn,'akses','id_akses',$id_akses,'akses');
-            $datetime_daftar=GetDetailData($Conn,'akses','id_akses',$id_akses,'datetime_daftar');
-            $datetime_update=GetDetailData($Conn,'akses','id_akses',$id_akses,'datetime_update');
-            //Format Tanggal
-            $strtotime1=strtotime($datetime_daftar);
-            $strtotime2=strtotime($datetime_update);
-            //Menampilkan Tanggal
-            $DateDaftar=date('d/m/Y H:i:s T', $strtotime1);
-            $DateUpdate=date('d/m/Y H:i:s T', $strtotime2);
-            if(!empty($image_akses)){
-                $image_akses=$image_akses;
-            }else{
-                $image_akses="No-Image.png";
-            }
 ?>
             <div class="row mb-3">
-                <div class="col-md-12 mb-3">
-                    <b>Informasi Akses</b>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Nama Lengkap</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $nama_akses; ?></code>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Nomor Kontak</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $kontak_akses; ?></code>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Alamat Email</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $email_akses; ?></code>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Level Akses</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $akses; ?></code>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Tanggal Data</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $DateDaftar; ?></code>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col col-md-4">Tanggal Update</div>
-                        <div class="col col-md-8">
-                            <code class="text text-grayish"><?php echo $DateUpdate; ?></code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12 mb-3">
-                    <b>Rekapitulasi Log Akses</b>
-                </div>
                 <div class="col-md-12">
                     <div class="table table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <td align="center"><b>No</b></td>
@@ -103,23 +36,56 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    if(empty($JumlahAktivitas)){
-                                        echo '<tr>';
-                                        echo '  <td class="text-center text-danger" colspan="3">Akun Akses Ini Belum Memiliki Record Aktivitas</td>';
-                                        echo '</tr>';
+                                    $JumlahAktivitas = 0;
+                                     try {
+                                        // Query untuk menghitung total aktivitas dengan PDO
+                                        $query = $Conn->prepare("SELECT COUNT(*) as total FROM log WHERE id_akses = :id_akses");
+                                        $query->bindParam(':id_akses', $id_akses, PDO::PARAM_STR);
+                                        $query->execute();
+                                        
+                                        // Ambil hasil
+                                        $data = $query->fetch(PDO::FETCH_ASSOC);
+                                        $JumlahAktivitas = (int)$data['total'];
+                                        
+                                    } catch (PDOException $e) {
+                                        $JumlahAktivitas = 0;
                                     }
-                                    $no=1;
-                                    $query = mysqli_query($Conn, "SELECT DISTINCT kategori_log FROM log WHERE id_akses='$id_akses' ORDER BY id_log DESC");
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        $kategori_log= $data['kategori_log'];
-                                        //Menghitung Jumlah LOG
-                                        $JumlahLog = mysqli_num_rows(mysqli_query($Conn, "SELECT*FROM log WHERE id_akses='$id_akses' AND kategori_log='$kategori_log'"));
+                                    try {
+                                        if(empty($JumlahAktivitas)) {
+                                            echo '<tr>';
+                                            echo '  <td class="text-center text-danger" colspan="3">Akun Akses Ini Belum Memiliki Record Aktivitas</td>';
+                                            echo '</tr>';
+                                        } else {
+                                            $no = 1;
+                                            
+                                            // Query untuk mendapatkan kategori log unik
+                                            $query = $Conn->prepare("SELECT DISTINCT kategori_log FROM log WHERE id_akses = :id_akses ORDER BY id_log DESC");
+                                            $query->bindParam(':id_akses', $id_akses, PDO::PARAM_STR);
+                                            $query->execute();
+                                            
+                                            while ($data = $query->fetch(PDO::FETCH_ASSOC)) {
+                                                $kategori_log = htmlspecialchars($data['kategori_log']);
+                                                
+                                                // Menghitung jumlah log per kategori
+                                                $countQuery = $Conn->prepare("SELECT COUNT(*) as jumlah FROM log WHERE id_akses = :id_akses AND kategori_log = :kategori_log");
+                                                $countQuery->bindParam(':id_akses', $id_akses, PDO::PARAM_STR);
+                                                $countQuery->bindParam(':kategori_log', $kategori_log, PDO::PARAM_STR);
+                                                $countQuery->execute();
+                                                $countData = $countQuery->fetch(PDO::FETCH_ASSOC);
+                                                $JumlahLog = $countData['jumlah'];
+                                                
+                                                echo '<tr>';
+                                                echo '  <td class="text-center">'.htmlspecialchars($no).'</td>';
+                                                echo '  <td class="text-left">'.htmlspecialchars($kategori_log).'</td>';
+                                                echo '  <td class="text-center">'.htmlspecialchars($JumlahLog).' Record</td>';
+                                                echo '</tr>';
+                                                $no++;
+                                            }
+                                        }
+                                    } catch (PDOException $e) {
                                         echo '<tr>';
-                                        echo '  <td class="text-center">'.$no.'</td>';
-                                        echo '  <td class="text-left">'.$kategori_log.'</td>';
-                                        echo '  <td class="text-center">'.$JumlahLog.' Record</td>';
+                                        echo '  <td class="text-center text-danger" colspan="3">Terjadi kesalahan: '.htmlspecialchars($e->getMessage()).'</td>';
                                         echo '</tr>';
-                                        $no++;
                                     }
                                 ?>
                             </tbody>

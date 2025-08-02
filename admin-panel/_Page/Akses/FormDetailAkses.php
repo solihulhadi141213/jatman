@@ -46,7 +46,7 @@
 ?>
             <div class="row mb-3 border-1 border-bottom">
                 <div class="col-md-12 text-center mb-4">
-                    <img src="assets/img/User/<?php echo $image_akses; ?>" alt="" width="50%" class="rounded-circle">
+                    <img src="image_proxy.php?dir=User&filename=<?php echo $image_akses; ?>" alt="" width="50%" class="rounded-circle">
                 </div>
             </div>
             <div class="row mb-3">

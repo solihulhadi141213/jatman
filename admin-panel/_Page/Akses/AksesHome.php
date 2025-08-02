@@ -1,13 +1,13 @@
 <div class="pagetitle">
     <h1>
         <a href="">
-            <i class="bi bi-person"></i> Akses Pengurus</a>
+            <i class="bi bi-person"></i> Akun Akses</a>
         </a>
     </h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">Akses Pengurus</li>
+            <li class="breadcrumb-item active">Akun Akses</li>
         </ol>
     </nav>
 </div>
@@ -41,8 +41,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body" id="MenampilkanTabelAkses">
-
+                <div class="card-body">
+                    <div class="table table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <td align="left"><b>No</b></td>
+                                    <td align="left"><b>Nama</b></td>
+                                    <td align="left"><b>Kontak</b></td>
+                                    <td align="left"><b>Email</b></td>
+                                    <td align="left"><b>Akses</b></td>
+                                    <td align="left"><b>Opsi</b></td>
+                                </tr>
+                            </thead>
+                            <tbody id="MenampilkanTabelAkses">
+                                <tr>
+                                    <td colspan="6" class="text-center">
+                                        <small class="text-danger">Belum Ada Data Yang Ditampilkan</small>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-6">
+                            <small id="page_info">
+                                Page 1 Of 100
+                            </small>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button type="button" class="btn btn-sm btn-outline-info btn-floating" id="prev_button">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-info btn-floating" id="next_button">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

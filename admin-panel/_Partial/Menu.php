@@ -275,10 +275,10 @@
                     </a>
                 </li> 
                 <li>
-                    <a href="index.php?Page=AutoJurnal" class="<?php if($PageMenu=="AutoJurnal"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Auto Jurnal</span>
+                    <a href="index.php?Page=SettingEmail" class="<?php if($PageMenu=="SettingKoneksi"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Koneksi Web</span>
                     </a>
-                </li>
+                </li> 
                 <li>
                     <a href="index.php?Page=SettingEmail" class="<?php if($PageMenu=="SettingEmail"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Email Gateway</span>

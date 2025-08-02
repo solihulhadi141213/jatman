@@ -11,7 +11,7 @@
             "Akses"                 => "_Page/Akses/ModalAkses.php",
             "SettingGeneral"        => "_Page/SettingGeneral/ModalSettingGeneral.php",
             "Help"                  => "_Page/Help/ModalHelp.php",
-            "SettingEmail"          => "_Page/SettingService/ModalSettingService.php",
+            "SettingEmail"          => "_Page/SettingEmail/ModalSettingEmail.php",
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];
 

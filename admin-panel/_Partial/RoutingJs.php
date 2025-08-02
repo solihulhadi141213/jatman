@@ -15,7 +15,7 @@
             "EntitasAkses"              => "_Page/EntitasAkses/EntitasAkses.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
-            "SettingEmail"              => "_Page/SettingService/SettingService.js",
+            "SettingEmail"              => "_Page/SettingEmail/SettingEmail.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"
         ];
 

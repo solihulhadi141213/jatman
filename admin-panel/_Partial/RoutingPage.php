@@ -12,7 +12,7 @@
             "SettingGeneral"    =>  "_Page/SettingGeneral/SettingGeneral.php",
             "EntitasAkses"      =>  "_Page/EntitasAkses/EntitasAkses.php",
             "Help"              =>  "_Page/Help/Help.php",
-            "SettingEmail"      =>  "_Page/SettingService/SettingService.php",
+            "SettingEmail"      =>  "_Page/SettingEmail/SettingEmail.php",
             "Aktivitas"         =>  "_Page/Aktivitas/Aktivitas.php",
             "Error"             =>  "_Page/Error/Error.php"
         ];

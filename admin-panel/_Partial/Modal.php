@@ -10,8 +10,10 @@
             "AksesEntitas"          => "_Page/AksesEntitas/ModalAksesEntitas.php",
             "Akses"                 => "_Page/Akses/ModalAkses.php",
             "SettingGeneral"        => "_Page/SettingGeneral/ModalSettingGeneral.php",
-            "Help"                  => "_Page/Help/ModalHelp.php",
             "SettingEmail"          => "_Page/SettingEmail/ModalSettingEmail.php",
+            "SettingKoneksiWeb"     => "_Page/SettingKoneksiWeb/ModalSettingKoneksiWeb.php",
+            "Help"                  => "_Page/Help/ModalHelp.php",
+            
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];
 

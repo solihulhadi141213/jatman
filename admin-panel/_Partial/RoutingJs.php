@@ -9,13 +9,14 @@
         $scripts = [
             "MyProfile"                 => "_Page/MyProfile/MyProfile.js",
             "AksesFitur"                => "_Page/AksesFitur/AksesFitur.js",
-            "AksesEntitas"                => "_Page/AksesEntitas/AksesEntitas.js",
+            "AksesEntitas"              => "_Page/AksesEntitas/AksesEntitas.js",
             "Akses"                     => "_Page/Akses/Akses.js",
             "SettingGeneral"            => "_Page/SettingGeneral/SettingGeneral.js",
+            "SettingEmail"              => "_Page/SettingEmail/SettingEmail.js",
+            "SettingKoneksiWeb"         => "_Page/SettingKoneksiWeb/SettingKoneksiWeb.js",
             "EntitasAkses"              => "_Page/EntitasAkses/EntitasAkses.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
-            "SettingEmail"              => "_Page/SettingEmail/SettingEmail.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"
         ];
 

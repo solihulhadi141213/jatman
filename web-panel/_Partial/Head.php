@@ -30,10 +30,10 @@
     <!-- Ganti jika punya gambar banner Twitter khusus -->
 
     <!-- Favicon & Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_180x180; ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_32x32; ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_16x16; ?>">
-    <link rel="manifest" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_manifest; ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_180x180; ?>?v=<?php echo date('YmdHis'); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_32x32; ?>?v=<?php echo date('YmdHis'); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_16x16; ?>?v=<?php echo date('YmdHis'); ?>">
+    <link rel="manifest" href="<?php echo $setting_base_url; ?>/assets/img/<?php echo $setting_manifest; ?>?v=<?php echo date('YmdHis'); ?>">
     
     <!-- Canonical URL (SEO untuk mencegah duplikat) -->
     <link rel="canonical" href="<?php echo $setting_base_url; ?>">

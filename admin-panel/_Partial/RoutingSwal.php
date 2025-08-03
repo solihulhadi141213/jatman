@@ -84,6 +84,15 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Metatag Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Metatag Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

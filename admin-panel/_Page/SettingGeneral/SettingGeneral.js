@@ -1,4 +1,4 @@
-//Proses Tambah Akses
+//Proses Setting General
 $('#ProsesSettingGeneral').submit(function(){
     $('#NotifikasiSimpanSettingGeneral').html('<div class="spinner-border text-secondary" role="status"><span class="sr-only"></span></div>');
     var form = $('#ProsesSettingGeneral')[0];

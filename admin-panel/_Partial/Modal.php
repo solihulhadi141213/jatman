@@ -12,8 +12,8 @@
             "SettingGeneral"        => "_Page/SettingGeneral/ModalSettingGeneral.php",
             "SettingEmail"          => "_Page/SettingEmail/ModalSettingEmail.php",
             "SettingKoneksiWeb"     => "_Page/SettingKoneksiWeb/ModalSettingKoneksiWeb.php",
+            "Metatag"               => "_Page/Metatag/ModalMetatag.php",
             "Help"                  => "_Page/Help/ModalHelp.php",
-            
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];
 

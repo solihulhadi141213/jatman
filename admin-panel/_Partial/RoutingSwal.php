@@ -102,6 +102,15 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Navbar Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Navbar Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

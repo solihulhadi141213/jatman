@@ -14,6 +14,7 @@
             "SettingKoneksiWeb"     =>  "_Page/SettingKoneksiWeb/SettingKoneksiWeb.php",
             "Metatag"               =>  "_Page/Metatag/Metatag.php",
             "Favicon"               =>  "_Page/Favicon/Favicon.php",
+            "Navbar"                =>  "_Page/Navbar/Navbar.php",
             "Help"                  =>  "_Page/Help/Help.php",
             "Aktivitas"             =>  "_Page/Aktivitas/Aktivitas.php",
             "Error"                 =>  "_Page/Error/Error.php"

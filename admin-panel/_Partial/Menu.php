@@ -66,12 +66,12 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="kontak_alamat"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-columns"></i>
                 <span>Layout</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="kontak_alamat"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="index.php?Page=Metatag" class="<?php if($PageMenu=="Metatag"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Metatag</span>
@@ -85,6 +85,11 @@
                 <li>
                     <a href="index.php?Page=Navbar" class="<?php if($PageMenu=="Navbar"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Navbar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=Menu" class="<?php if($PageMenu=="Menu"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Menu</span>
                     </a>
                 </li>
                 <li>
@@ -95,25 +100,25 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#anggota-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="BlogList"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#anggota-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-newspaper"></i>
                 <span>Blog Posting</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="anggota-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="anggota-nav" class="nav-content collapse <?php if($PageMenu=="BlogList"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="index.php?Page=Metatag" class="<?php if($PageMenu=="Metatag"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Metatag</span>
+                    <a href="index.php?Page=BlogList" class="<?php if($PageMenu=="BlogList"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Blog List</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?Page=Favicon" class="<?php if($PageMenu=="Favicon"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Favicon & Logo</span>
+                    <a href="index.php?Page=Label" class="<?php if($PageMenu=="Label"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Label/Tag</span>
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?Page=Navbar" class="<?php if($PageMenu=="Navbar"){echo "active";} ?>">
-                        <i class="bi bi-circle"></i><span>Navbar</span>
+                    <a href="index.php?Page=BlogStatistik" class="<?php if($PageMenu=="BlogStatistik"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Statistik</span>
                     </a>
                 </li>
             </ul>

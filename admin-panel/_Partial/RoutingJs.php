@@ -15,6 +15,7 @@
             "SettingEmail"              => "_Page/SettingEmail/SettingEmail.js",
             "SettingKoneksiWeb"         => "_Page/SettingKoneksiWeb/SettingKoneksiWeb.js",
             "Metatag"                   => "_Page/Metatag/Metatag.js",
+            "Favicon"                   => "_Page/Favicon/Favicon.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"

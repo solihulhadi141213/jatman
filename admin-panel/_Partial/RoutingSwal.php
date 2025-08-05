@@ -93,6 +93,15 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Favicon Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Favicon Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

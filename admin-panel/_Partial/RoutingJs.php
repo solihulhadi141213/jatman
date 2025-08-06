@@ -17,6 +17,7 @@
             "Metatag"                   => "_Page/Metatag/Metatag.js",
             "Favicon"                   => "_Page/Favicon/Favicon.js",
             "Navbar"                    => "_Page/Navbar/Navbar.js",
+            "Menu"                      => "_Page/Menu/Menu.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"

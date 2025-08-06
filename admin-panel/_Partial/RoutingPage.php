@@ -15,6 +15,7 @@
             "Metatag"               =>  "_Page/Metatag/Metatag.php",
             "Favicon"               =>  "_Page/Favicon/Favicon.php",
             "Navbar"                =>  "_Page/Navbar/Navbar.php",
+            "Menu"                  =>  "_Page/Menu/Menu.php",
             "Help"                  =>  "_Page/Help/Help.php",
             "Aktivitas"             =>  "_Page/Aktivitas/Aktivitas.php",
             "Error"                 =>  "_Page/Error/Error.php"

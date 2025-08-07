@@ -66,12 +66,12 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-columns"></i>
                 <span>Layout</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="index.php?Page=Metatag" class="<?php if($PageMenu=="Metatag"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Metatag</span>
@@ -93,8 +93,23 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?Page=kontak_alamat" class="<?php if($PageMenu=="kontak_alamat"){echo "active";} ?>">
+                    <a href="index.php?Page=KontakAlamat" class="<?php if($PageMenu=="KontakAlamat"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Kontak & Alamat</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=Medsos" class="<?php if($PageMenu=="Medsos"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Media Sosial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=TautanLain" class="<?php if($PageMenu=="TautanLain"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Tautan Lainnya</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=VisiMisi" class="<?php if($PageMenu=="VisiMisi"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Visi Misi</span>
                     </a>
                 </li>
             </ul>

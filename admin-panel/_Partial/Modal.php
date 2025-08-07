@@ -16,6 +16,7 @@
             "Favicon"               => "_Page/Favicon/ModalFavicon.php",
             "Navbar"                => "_Page/Navbar/ModalNavbar.php",
             "Menu"                  => "_Page/Menu/ModalMenu.php",
+            "KontakAlamat"          => "_Page/KontakAlamat/ModalKontakAlamat.php",
             "Help"                  => "_Page/Help/ModalHelp.php",
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];

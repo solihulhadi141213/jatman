@@ -111,6 +111,33 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Title Kontak Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Title Kontak Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Informasi Kontak Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Informasi Kontak Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+     <?php if($NotifikasiSwal=="Kontak Berhasil Dihapus"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Kontak Berhasil Dihapus!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

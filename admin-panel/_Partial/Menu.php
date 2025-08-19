@@ -66,12 +66,12 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-columns"></i>
                 <span>Layout</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="index.php?Page=Metatag" class="<?php if($PageMenu=="Metatag"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Metatag</span>
@@ -98,7 +98,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?Page=Medsos" class="<?php if($PageMenu=="Medsos"){echo "active";} ?>">
+                    <a href="index.php?Page=MediaSosial" class="<?php if($PageMenu=="MediaSosial"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Media Sosial</span>
                     </a>
                 </li>

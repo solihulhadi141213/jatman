@@ -19,6 +19,7 @@
             "Navbar"                    => "_Page/Navbar/Navbar.js",
             "Menu"                      => "_Page/Menu/Menu.js",
             "KontakAlamat"              => "_Page/KontakAlamat/KontakAlamat.js",
+            "MediaSosial"               => "_Page/MediaSosial/MediaSosial.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"

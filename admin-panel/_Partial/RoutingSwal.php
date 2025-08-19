@@ -138,6 +138,33 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Title Medsos Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Title Medsos Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Informasi Medsos Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Informasi Medsos Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Medsos Berhasil Dihapus"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Medsos Berhasil Dihapus!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

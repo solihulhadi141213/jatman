@@ -17,6 +17,7 @@
             "Navbar"                =>  "_Page/Navbar/Navbar.php",
             "Menu"                  =>  "_Page/Menu/Menu.php",
             "KontakAlamat"          =>  "_Page/KontakAlamat/KontakAlamat.php",
+            "MediaSosial"           =>  "_Page/MediaSosial/MediaSosial.php",
             "Help"                  =>  "_Page/Help/Help.php",
             "Aktivitas"             =>  "_Page/Aktivitas/Aktivitas.php",
             "Error"                 =>  "_Page/Error/Error.php"

@@ -165,6 +165,42 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Title Tautan Lainnya Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Title Tautan Lainnya Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Informasi Tautan Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Informasi Tautan Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Tautan Berhasil Dihapus"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Tautan Berhasil Dihapus!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Informasi Tauan Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Informasi Tauan Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

@@ -18,6 +18,7 @@
             "Menu"                  => "_Page/Menu/ModalMenu.php",
             "KontakAlamat"          => "_Page/KontakAlamat/ModalKontakAlamat.php",
             "MediaSosial"           => "_Page/MediaSosial/ModalMediaSosial.php",
+            "TautanLain"            => "_Page/TautanLain/ModalTautanLain.php",
             "Help"                  => "_Page/Help/ModalHelp.php",
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];

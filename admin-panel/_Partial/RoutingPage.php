@@ -19,6 +19,7 @@
             "KontakAlamat"          =>  "_Page/KontakAlamat/KontakAlamat.php",
             "MediaSosial"           =>  "_Page/MediaSosial/MediaSosial.php",
             "TautanLain"            =>  "_Page/TautanLain/TautanLain.php",
+            "VisiMisi"              =>  "_Page/VisiMisi/VisiMisi.php",
             "Help"                  =>  "_Page/Help/Help.php",
             "Aktivitas"             =>  "_Page/Aktivitas/Aktivitas.php",
             "Error"                 =>  "_Page/Error/Error.php"

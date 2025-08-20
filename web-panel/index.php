@@ -253,7 +253,7 @@
                     </div>
                 </div>
                 <hr class="border-light">
-                <div class="text-center text-white small">&copy; 2025 RSU El-Syifa Kuningan. All rights reserved.</div>
+                <div class="text-center text-white small">&copy; 2025 <?php echo $setting_author; ?>. All rights reserved.</div>
             </div>
         </footer>
 

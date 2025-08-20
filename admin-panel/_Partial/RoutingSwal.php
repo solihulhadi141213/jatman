@@ -201,6 +201,15 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Visi Dan Misi Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Visi Dan Misi Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

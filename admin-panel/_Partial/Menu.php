@@ -66,12 +66,12 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"||$PageMenu=="TautanLain"||$PageMenu=="VisiMisi"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"||$PageMenu=="TautanLain"||$PageMenu=="VisiMisi"||$PageMenu=="GoogleMap"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#layout-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-columns"></i>
                 <span>Layout</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"||$PageMenu=="TautanLain"||$PageMenu=="VisiMisi"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="layout-nav" class="nav-content collapse <?php if($PageMenu=="Metatag"||$PageMenu=="Favicon"||$PageMenu=="Navbar"||$PageMenu=="Menu"||$PageMenu=="KontakAlamat"||$PageMenu=="MediaSosial"||$PageMenu=="TautanLain"||$PageMenu=="VisiMisi"||$PageMenu=="GoogleMap"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="index.php?Page=Metatag" class="<?php if($PageMenu=="Metatag"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Metatag</span>
@@ -110,6 +110,11 @@
                 <li>
                     <a href="index.php?Page=VisiMisi" class="<?php if($PageMenu=="VisiMisi"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Visi Misi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=GoogleMap" class="<?php if($PageMenu=="GoogleMap"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Google Map</span>
                     </a>
                 </li>
             </ul>

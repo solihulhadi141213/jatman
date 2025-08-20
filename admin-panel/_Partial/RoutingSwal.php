@@ -210,6 +210,15 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Google Map Berhasil Disimpan"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Google Map Berhasil Disimpan!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

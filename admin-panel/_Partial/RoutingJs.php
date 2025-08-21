@@ -18,6 +18,7 @@
             "Favicon"                   => "_Page/Favicon/Favicon.js",
             "Navbar"                    => "_Page/Navbar/Navbar.js",
             "Menu"                      => "_Page/Menu/Menu.js",
+            "Hero"                      => "_Page/Hero/Hero.js",
             "KontakAlamat"              => "_Page/KontakAlamat/KontakAlamat.js",
             "MediaSosial"               => "_Page/MediaSosial/MediaSosial.js",
             "TautanLain"                => "_Page/TautanLain/TautanLain.js",

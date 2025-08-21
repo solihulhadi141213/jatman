@@ -16,6 +16,7 @@
             "Favicon"               =>  "_Page/Favicon/Favicon.php",
             "Navbar"                =>  "_Page/Navbar/Navbar.php",
             "Menu"                  =>  "_Page/Menu/Menu.php",
+            "Hero"                  =>  "_Page/Hero/Hero.php",
             "KontakAlamat"          =>  "_Page/KontakAlamat/KontakAlamat.php",
             "MediaSosial"           =>  "_Page/MediaSosial/MediaSosial.php",
             "TautanLain"            =>  "_Page/TautanLain/TautanLain.php",

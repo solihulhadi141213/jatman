@@ -21,6 +21,7 @@
             "TautanLain"            => "_Page/TautanLain/ModalTautanLain.php",
             "VisiMisi"              => "_Page/VisiMisi/ModalVisiMisi.php",
             "GoogleMap"             => "_Page/GoogleMap/ModalGoogleMap.php",
+            "BlogList"              => "_Page/BlogList/ModalBlogList.php",
             "Help"                  => "_Page/Help/ModalHelp.php",
             "Aktivitas"             => "_Page/Aktivitas/ModalAktivitas.php"
         ];

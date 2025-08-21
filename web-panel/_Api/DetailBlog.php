@@ -73,15 +73,23 @@
         // Ambil tag dari tabel blog_tag
         $tag_list = [];
         try {
-            $stmtTag = $Conn->prepare("SELECT tag FROM blog_tag WHERE id_blog = :id_blog");
-            $stmtTag->bindParam(':id_blog', $id_blog);
+            $sql = "SELECT blog_tag FROM blog_tag WHERE id_blog = :id_blog";
+            $stmtTag = $Conn->prepare($sql);
+
+            // Binding parameter dengan tipe data eksplisit
+            $stmtTag->bindParam(':id_blog', $id_blog, PDO::PARAM_STR);
+
             $stmtTag->execute();
-            while ($tagRow = $stmtTag->fetch(PDO::FETCH_ASSOC)) {
-                if (!empty($tagRow['tag'])) {
-                    $tag_list[] = $tagRow['tag'];
-                }
+
+            // Ambil semua tag sekaligus dalam array
+            $tags = $stmtTag->fetchAll(PDO::FETCH_COLUMN);
+
+            if ($tags) {
+                $tag_list = $tags;
             }
         } catch (PDOException $e) {
+            // Log error detail untuk debug (jangan tampilkan langsung ke user di production)
+            error_log("DB Error (get blog tags): " . $e->getMessage());
             $tag_list = [];
         }
 

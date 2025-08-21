@@ -219,6 +219,24 @@
             )
         </script>
     <?php } ?>
+    <?php if($NotifikasiSwal=="Edit Konten Blog Berhasil"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Edit Konten Blog Berhasil!',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if($NotifikasiSwal=="Hapus Konten Blog Berhasil"){ ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                'Hapus Konten Blog Berhasil!',
+                'success'
+            )
+        </script>
+    <?php } ?>
 <?php 
     unset($_SESSION['NotifikasiSwal']);
     }

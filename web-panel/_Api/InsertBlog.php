@@ -84,9 +84,9 @@
         sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog Tidak Boleh Kosong'], 400);
     }
 
-    // Validasi panjang deskripsi (maksimal 255 karakter)
-    if(strlen($deskripsi) > 255){
-        sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog maksimal 255 karakter'], 400);
+    // Validasi panjang deskripsi (maksimal 50000 karakter)
+    if(strlen($deskripsi) > 50000){
+        sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog maksimal 50.000 karakter'], 400);
     }
 
     //Validasi author_blog tidak boleh kosong

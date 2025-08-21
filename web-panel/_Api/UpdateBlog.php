@@ -76,7 +76,7 @@
     if (empty($title_blog)) sendResponse(['status' => 'error', 'message' => 'Judul Blog Tidak Boleh Kosong'], 400);
     if (strlen($title_blog) > 100) sendResponse(['status' => 'error', 'message' => 'Judul Blog maksimal 100 karakter'], 400);
     if (empty($deskripsi)) sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog Tidak Boleh Kosong'], 400);
-    if (strlen($deskripsi) > 255) sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog maksimal 255 karakter'], 400);
+    if (strlen($deskripsi) > 10000) sendResponse(['status' => 'error', 'message' => 'Deskripsi Blog maksimal 10.000 karakter'], 400);
     if (empty($author_blog)) sendResponse(['status' => 'error', 'message' => 'Author Blog Tidak Boleh Kosong'], 400);
     if (empty($tags)) sendResponse(['status' => 'error', 'message' => 'Tag tidak boleh kosong'], 400);
 

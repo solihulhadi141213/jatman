@@ -26,9 +26,21 @@
 <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
     <!-- Indicators -->
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
+        <?php
+            // Menampilkan Hero 
+            if(!empty($arry_static['hero'])){
+                $no=1;
+                foreach($arry_static['hero'] as $hero_list){
+                    $no_reqal=$no-1;
+                    if($no_reqal==0){
+                        echo '<button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>';
+                    }else{
+                        echo '<button type="button" data-bs-target="#carouselHero" data-bs-slide-to="'.$no_reqal.'"></button>';
+                    }
+                    $no++;
+                }
+            }
+        ?>
     </div>
     
     <!-- Slides -->
@@ -57,7 +69,7 @@
                     if($hero_show_button==false){
                         echo '
                             <div class="carousel-item '.$active.'" data-bs-interval="5000">
-                                <img src="assets/img/_component/'.$hero_image.'" class="d-block w-100" alt="Slide '.$hero_order.'">
+                                <img src="image_proxy.php?segment=Hero&image_name='.$hero_image.'" class="d-block w-100" alt="Slide '.$hero_order.'">
                                 <div class="carousel-caption">
                                     <h5>'.$hero_title.'</h5>
                                     <h3>'.$hero_sub_title.'</h3></p>
@@ -67,7 +79,7 @@
                     }else{
                         echo '
                             <div class="carousel-item '.$active.'" data-bs-interval="5000">
-                                <img src="assets/img/_component/'.$hero_image.'" class="d-block w-100" alt="Slide '.$hero_order.'">
+                                <img src="image_proxy.php?segment=Hero&image_name='.$hero_image.'" class="d-block w-100" alt="Slide '.$hero_order.'">
                                 <div class="carousel-caption">
                                     <h5>'.$hero_title.'</h5>
                                     <h3>'.$hero_sub_title.'</h3></p>

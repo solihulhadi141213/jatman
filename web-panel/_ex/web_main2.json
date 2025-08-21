@@ -1,0 +1,282 @@
+{
+    "hero": [
+       {
+            "image": "f98d3bedd022d456d65b858a7fca3a1a9225.png",
+            "order": "1",
+            "title": "Selamat Datang Di",
+            "button": {
+                "button_url": "",
+                "show_button": false,
+                "button_label": ""
+            },
+            "sub_title": "Website Resmi Jatman Jabar"
+        },
+        {
+            "image": "f98d3bedd022d456d65b858a7fca3a1a9225.png",
+            "order": "2",
+            "title": "Bergabung Dengan Jatman Jabar",
+            "button": {
+                "button_url": "/Daftar",
+                "show_button": true,
+                "button_label": "Bergabung"
+            },
+            "sub_title": "Isi Form Pendaftaran Pada Link Berikut Ini"
+        }, 
+        {
+            "image": "f98d3bedd022d456d65b858a7fca3a1a9225.png",
+            "order": "3",
+            "title": "Berita Dan Artikel",
+            "button": {
+                "button_url": "/Artikel",
+                "show_button": true,
+                "button_label": "Baca Berita"
+            },
+            "sub_title": "Baca Berita Dan Artikel Terbaru"
+        },
+        {
+            "image": "4e5b934caf3730daf218abceb7f27a43f684.png",
+            "order": "4",
+            "title": "Berita & Artikel",
+            "button": {
+                "button_url": "https://google.com",
+                "show_button": true,
+                "button_label": "Buka Halaman"
+            },
+            "sub_title": "Kumpulan berita terbaru dan artikel kesehatan yang perlu anda ketahui"
+        },
+        {
+            "image": "831ea41b46ba9d8d1d1f026746dc325dd5cd.png",
+            "order": "5",
+            "title": "Berita & Artikel",
+            "button": {
+                "button_url": "https://google.com",
+                "show_button": true,
+                "button_label": "Buka Halaman"
+            },
+            "sub_title": "Kumpulan berita terbaru dan artikel kesehatan yang perlu anda ketahui"
+        },
+        {
+            "image": "7af2e72698cd20fde58b1ea55cff23147377.png",
+            "order": 6,
+            "title": "Hai Selamat Datang",
+            "button": {
+                "button_url": "",
+                "show_button": false,
+                "button_label": ""
+            },
+            "sub_title": "Kumpulan berita terbaru dan artikel kesehatan yang perlu anda ketahui"
+        }
+        
+    ],
+    "menu": [
+        {
+            "url": "index.php",
+            "label": "Beranda",
+            "order": 1,
+            "submenu": []
+        },
+        {
+            "url": "/Blog",
+            "label": "Blog",
+            "order": 2,
+            "submenu": []
+        },
+        {
+            "url": "/Tentang",
+            "label": "Tentang",
+            "order": 3,
+            "submenu": [
+                {
+                    "url": "http://localhost/jatman/web-panel//Blog?id=907031747a5b42eb90ae9f634f2c032e2d30",
+                    "label": "Visi Dan Misi",
+                    "order": 1
+                },
+                {
+                    "url": "http://localhost/jatman/web-panel//Blog?id=e33532892d4bdaf1f727f6428f7fe3910a1e",
+                    "label": "Kontak &amp; Lokasi",
+                    "order": 2
+                }
+            ]
+        },
+        {
+            "url": "https://www.youtube.com/watch?v=d9gxlcA7tk4&amp;list=RDAz4_0DC84ZY&amp;index=2",
+            "label": "Peta Situs",
+            "order": 4,
+            "submenu": []
+        }
+    ],
+    "alamat": {
+        "title": "Alamat",
+        "value": "Jalan RE Martadinata No 128 Kelurahan Ancaran, Kecamatan Kuningan, Kabupaten Kuningan, Jawa Barat."
+    },
+    "kontak": {
+        "list": [
+            {
+                "icon": "<i class=\"bi bi-telephone me-2\"></i>",
+                "order": 1,
+                "value": "(0232) 1234567"
+            },
+            {
+                "icon": "<i class=\"bi bi-whatsapp\"></i>",
+                "order": 2,
+                "value": "6289601154726"
+            },
+            {
+                "icon": "<i class=\"bi bi-box-arrow-in-down-right\"></i>",
+                "order": 3,
+                "value": "dhiforester@gmail.com"
+            },
+            {
+                "icon": "<i class=\"bi bi-envelope-arrow-down\"></i>",
+                "order": 4,
+                "value": "dhiforester@gmail.com"
+            }
+        ],
+        "title": "Contact Us"
+    },
+    "navbar": {
+        "title": "Jatman Jabar",
+        "logo-image": "21ffa64a67af1163ab440906fdc2f4b91469.png"
+    },
+    "favicon": {
+        "16x16": "favicon-16x16.png",
+        "32x32": "favicon-32x32.png",
+        "180x180": "apple-touch-icon.png",
+        "manifest": "site.webmanifest"
+    },
+    "meta_tag": {
+        "type": "website",
+        "title": "Jatman Jabar PBNU",
+        "author": "Jatman Jabar",
+        "robots": "index, follow",
+        "base_url": "http://localhost/jatman/web-panel/",
+        "keywords": "RSU, RS, RSU El-Syifa, RSEl-Syifa, Elsyifa, RS Elsyifa, RS El-Syifa, Kuningan, Kabupaten Kuningan, Kab. Kuningan",
+        "og-image": "c2e40b95ae2120da4def65dc87781869d88f.png",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "logo-image": "ffa9b980dbb80bd4048e1f161633c3dcbcbb.png",
+        "description": "Rumah Sakit Umum El-Syifa Kuningan, Kabupaten Kuningan. Memberikan pelayanan kesehatan yang profesional dan terpercaya."
+    },
+    "visi_misi": {
+        "misi": "<ol>\r\n<li>Memberikan pelayanan kesehatan yang berkualitas sesuai dengan syariat islami.</li>\r\n<li>Ikut berperan serta dalam kegiatan sosial kemasyarakatan dan berperan serta dalam pembangunan daerah.</li>\r\n</ol>",
+        "visi": "Melayani masyarakat dalam memperoleh haknya untuk mendapatkan pelayanan kesehatan yang berkualitas sesuai moto rumah sakit : Etis, Logis, Sabar, Yakin, Islami, Fitrah, Amanah",
+        "motto": "Etis, Logis, Sabar, Yakin, Islami, Fitrah, Amanah",
+        "title": "Visi Dan Misi"
+    },
+    "google_map": {
+        "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15841.503739745505!2d108.5106989!3d-6.9649018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1756c44a7a4d%3A0x3894739e0e4f9396!2sGrand%20Amelia%20Kuningan!5e0!3m2!1sen!2sid!4v1755691913402!5m2!1sen!2sid",
+        "class": "mb-0",
+        "style": "border:0;",
+        "width": "100%",
+        "height": "350",
+        "loading": "lazy",
+        "referrerpolicy": "no-referrer-when-downgrade",
+        "allowfullscreen": ""
+    },
+    "info_grafis": {
+        "title": "Info Grafis",
+        "bg_image": "c7f9587bb974603a4ba4cdb1c0ec22e1e335.png",
+        "list_content": [
+            {
+                "icon": "<i class=\"bi bi-person-lines-fill\"></i>",
+                "name": "Pasien",
+                "count": 1000
+            },
+            {
+                "icon": "<i class=\"bi bi-person\"></i>",
+                "name": "Kunjungan",
+                "count": 1500
+            },
+            {
+                "icon": "<i class=\"bi bi-person\"></i>",
+                "name": "Radiologi",
+                "count": 2500
+            },
+            {
+                "icon": "<i class=\"bi bi-person\"></i>",
+                "name": "Laboratorium",
+                "count": 3500
+            }
+        ]
+    },
+    "media_sosial": {
+        "list": [
+            {
+                "url": "https://www.facebook.com",
+                "icon": "<i class=\"bi bi-facebook\"></i>",
+                "order": 1
+            },
+            {
+                "url": "https://www.youtube.com",
+                "icon": "<i class=\"bi bi-youtube\"></i>",
+                "order": 2
+            },
+            {
+                "url": "https://www.instagram.com",
+                "icon": "<i class=\"bi bi-instagram\"></i>",
+                "order": 3
+            },
+            {
+                "url": "https://www.threads.com",
+                "icon": "<i class=\"bi bi-threads\"></i>",
+                "order": 4
+            },
+            {
+                "url": "https://www.whatsapp.com",
+                "icon": "<i class=\"bi bi-whatsapp\"></i>",
+                "order": 5
+            },
+            {
+                "url": "https://x.com/XDevelopers",
+                "icon": "<i class=\"bi bi-twitter-x\"></i>",
+                "order": 6
+            }
+        ],
+        "title": "Media Sosial"
+    },
+    "berita_artikel": {
+        "limit": 8,
+        "title": "Berita &amp; Artikel",
+        "subtitle": "Kumpulan berita terbaru dan artikel kesehatan yang perlu anda ketahui"
+    },
+    "tautan_lainnya": {
+        "list": [
+            {
+                "url": "http://localhost/jatman/admin-panel/index.php?Page=TautanLain",
+                "label": "Hubungi Kami",
+                "order": 1,
+                "target": "_blank"
+            },
+            {
+                "url": "/faq",
+                "label": "FAQ",
+                "order": 2,
+                "target": "_blank"
+            },
+            {
+                "url": "/Syarat-Ketentuan",
+                "label": "Syarat & Ketentuan",
+                "order": 3,
+                "target": "_blank"
+            },
+            {
+                "url": "/kebijakan-privasi",
+                "label": "Kebijakan Privasi",
+                "order": 4,
+                "target": "_blank"
+            },
+            {
+                "url": "/peta-situs",
+                "label": "Peta Situs",
+                "order": 5,
+                "target": "_blank"
+            },
+            {
+                "url": "https://chatgpt.com/c/68a4a643-84b8-8323-ae60-b5daaafe7571",
+                "label": "Chat GPT",
+                "order": 6,
+                "target": "_blank"
+            }
+        ],
+        "title": "Tautan Lainnya"
+    }
+}

@@ -1,6 +1,6 @@
 <?php
     //Cek Aksesibilitas ke halaman ini
-    $IjinAksesSaya=IjinAksesSaya($Conn,$SessionIdAkses,'X7PZTkMcIQgbKnjXHgh');
+    $IjinAksesSaya=IjinAksesSaya($Conn,$SessionIdAkses,'U1uW0AA1h6Tkmmf3gPt');
     if($IjinAksesSaya!=="Ada"){
         include "_Page/Error/NoAccess.php";
     }else{

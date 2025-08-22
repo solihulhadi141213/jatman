@@ -91,7 +91,7 @@
                                 $content_blog = $blog['content_blog'];
                                 $deskripsi_blog = $blog['deskripsi'];
                                 $cover_blog = htmlspecialchars($blog['cover']);
-                                $cover_blog = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $blog['cover'];
+                                $cover_blog = 'image_proxy.php?segment=Artikel&image_name=' . $blog['cover'];
                                 
                                 //Tambahkan Log Pemirsa 
                                 $sql_log = "INSERT INTO blog_viewer (id_blog, datetime) VALUES (:id_blog, NOW())";
@@ -143,7 +143,7 @@
                                             $unit = $item['unit'] === '%' ? '%' : 'px';
                                             $position = $item['position'] ?? 'left';
                                             $caption = $item['caption'] ?? '';
-                                            $imageSrc = $base_url . 'image_proxy.php?segment=Artikel&image_name=' .htmlspecialchars($item['content']);
+                                            $imageSrc = 'image_proxy.php?segment=Artikel&image_name=' .htmlspecialchars($item['content']);
 
                                             if($position=="left"){
                                                 $text_position="text-left";
@@ -324,9 +324,9 @@
                                 foreach ($popular_list as $row) {
                                     $datetime_creat = date('d/m/Y H:i T', strtotime($row['datetime_creat']));
                                     $title = $row['title_blog'];
-                                    $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row['cover'];
+                                    $cover = 'image_proxy.php?segment=Artikel&image_name=' . $row['cover'];
                                     $id_blog = $row['id_blog'];
-                                    $url = $base_url . '/Blog?id=' . $id_blog;
+                                    $url = $base_url . 'Blog?id=' . $id_blog;
                                     ?>
                                     <div class="d-flex mb-3">
                                         <div style="flex: 0 0 80px;">
@@ -366,9 +366,9 @@
                                 foreach ($new_list as $row_post) {
                                     $datetime_creat = date('d/m/Y H:i T', strtotime($row_post['datetime_creat']));
                                     $title = $row_post['title_blog'];
-                                    $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row_post['cover'];
+                                    $cover = 'image_proxy.php?segment=Artikel&image_name=' . $row_post['cover'];
                                     $id_blog = $row_post['id_blog'];
-                                    $url = $base_url . '/Blog?id=' . $id_blog;
+                                    $url = $base_url . 'Blog?id=' . $id_blog;
                                     ?>
                                         <div class="d-flex mb-3">
                                             <div style="flex: 0 0 80px;">

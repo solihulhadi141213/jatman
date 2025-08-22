@@ -129,7 +129,7 @@
                                     $submenu=$arry_static_list['submenu'];
                                     if(empty(count($submenu))){
                                         echo '
-                                            <li class="nav-item"><a class="nav-link" href="'.$base_url.''.$menu_url.'">'.$menu_label.'</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="'.$menu_url.'">'.$menu_label.'</a></li>
                                         ';
                                     }else{
                                         echo '<li class="nav-item dropdown">';
@@ -140,7 +140,7 @@
                                             $submenu_url=$submenu_list['url'];
                                             echo '
                                                 <li>
-                                                    <a class="dropdown-item" href="'.$base_url.''.$submenu_url.'">'.$submenu_label.'</a>
+                                                    <a class="dropdown-item" href="'.$submenu_url.'">'.$submenu_label.'</a>
                                                 </li>
                                             ';
                                         }

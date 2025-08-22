@@ -164,11 +164,11 @@
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3">
                                 <div class="card h-100 d-flex flex-column show_transisi" style="width: 100%;">
                                     <div class="img-square-wrapper">
-                                        <img src="'.$base_url.'image_proxy.php?segment=Artikel&image_name='.$berita_artikel['cover'].'" class="card-img-top" alt="...">
+                                        <img src="image_proxy.php?segment=Artikel&image_name='.$berita_artikel['cover'].'" class="card-img-top" alt="...">
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <a href="'.$base_url.'Blog?id='.$berita_artikel['id_blog'].'" class="text text-decoration-none">'.$berita_artikel['title_blog'].'</a>
+                                            <a href="Blog?id='.$berita_artikel['id_blog'].'" class="text text-decoration-none">'.$berita_artikel['title_blog'].'</a>
                                         </h5>
                                         <p class="card-text">'.$date_time_creat_blog.'</p>
                                     </div>

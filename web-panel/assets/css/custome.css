@@ -1073,6 +1073,23 @@ iframe {
     color: #fff;
 }
 
+/* Tombol Hero */
+.hero-jkn {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background-color: #28a745;
+}
+.hero-jkn:hover {
+    background-color: #51d46f;
+    color: #fff;
+}
+
 /* Responsive spacing */
 @media (max-width: 767.98px) {
     .pendaftaran_antrian .btn-daftar,
@@ -1381,4 +1398,25 @@ a[href="Blog"].badge {
         font-size: 0.8rem;
         padding: 0.45rem 0.9rem !important;
     }
+}
+
+.tombol_berlangganan {
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.tombol_berlangganan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+}
+
+#ProsesBerlangganan input {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#ProsesBerlangganan input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 6px rgba(25, 135, 84, 0.3);
 }

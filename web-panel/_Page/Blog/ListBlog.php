@@ -13,21 +13,24 @@ $OrderBy    = $_POST['OrderBy'] ?? "datetime_creat";
 $page       = isset($_POST['page']) ? (int) $_POST['page'] : 1;
 $posisi     = ($page - 1) * $batas;
 
-$where = "";
+$where = "WHERE b.publish = 1"; // filter utama publish = 1
 $join = "";
 $params_filter = [];
 
+// =======================
+// Filter keyword
+// =======================
 if (!empty($keyword)) {
     if ($keyword_by === "blog_tag") {
-        $join = "LEFT JOIN blog_tag bt ON b.id_blog = bt.id_blog";
-        $where = "WHERE bt.blog_tag LIKE :keyword";
+        $join .= " LEFT JOIN blog_tag bt ON b.id_blog = bt.id_blog";
+        $where .= " AND bt.blog_tag LIKE :keyword";
         $params_filter[':keyword'] = "%$keyword%";
     } elseif (in_array($keyword_by, ['title_blog', 'deskripsi', 'author_blog'])) {
-        $where = "WHERE b.$keyword_by LIKE :keyword";
+        $where .= " AND b.$keyword_by LIKE :keyword";
         $params_filter[':keyword'] = "%$keyword%";
     } else {
-        // Gunakan dua placeholder berbeda!
-        $where = "WHERE (b.title_blog LIKE :keyword1 OR b.deskripsi LIKE :keyword2)";
+        // Cari di title & deskripsi
+        $where .= " AND (b.title_blog LIKE :keyword1 OR b.deskripsi LIKE :keyword2)";
         $params_filter[':keyword1'] = "%$keyword%";
         $params_filter[':keyword2'] = "%$keyword%";
     }
@@ -50,16 +53,16 @@ $sql_berita = "SELECT DISTINCT b.*
                $join 
                $where 
                ORDER BY b.$OrderBy $ShortBy 
-               LIMIT :posisi OFFSET :offset";
+               LIMIT :batas OFFSET :offset";
 $stmt_berita = $Conn->prepare($sql_berita);
 
 // Gabungkan filter + limit
 $params_berita = $params_filter;
 $params_berita[':offset'] = $posisi;
-$params_berita[':posisi'] = $batas; // LIMIT dulu, OFFSET kemudian (MySQL bisa kebalik)
+$params_berita[':batas'] = $batas;
 
 foreach ($params_berita as $key => $val) {
-    if ($key === ':posisi' || $key === ':offset') {
+    if ($key === ':batas' || $key === ':offset') {
         $stmt_berita->bindValue($key, (int)$val, PDO::PARAM_INT);
     } else {
         $stmt_berita->bindValue($key, $val, PDO::PARAM_STR);
@@ -79,6 +82,7 @@ if (count($berita_list) > 0) {
         $title_blog = $berita_artikel['title_blog'];
         $cover_image = 'image_proxy.php?segment=Artikel&image_name=' . $berita_artikel['cover'];
         $deskripsi_blog = $berita_artikel['deskripsi'];
+
         // Ambil tag/kategori
         $sql_tag = "SELECT blog_tag FROM blog_tag WHERE id_blog = :id_blog";
         $stmt_tag = $Conn->prepare($sql_tag);

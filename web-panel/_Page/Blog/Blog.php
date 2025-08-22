@@ -85,13 +85,21 @@
                         $blog_list = $stmt_blog->fetchAll();
                         if (count($blog_list) > 0) {
                             foreach ($blog_list as $blog) {
-                                $title_blog = htmlspecialchars($blog['title_blog']);
+                                $title_blog = $blog['title_blog'];
                                 $date_time_creat_blog = date('d/m/Y H:i T', strtotime($blog['datetime_creat']));
                                 $author_blog = $blog['author_blog'];
                                 $content_blog = $blog['content_blog'];
                                 $deskripsi_blog = $blog['deskripsi'];
                                 $cover_blog = htmlspecialchars($blog['cover']);
                                 $cover_blog = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $blog['cover'];
+                                
+                                //Tambahkan Log Pemirsa 
+                                $sql_log = "INSERT INTO blog_viewer (id_blog, datetime) VALUES (:id_blog, NOW())";
+                                $stmt_log = $Conn->prepare($sql_log);
+                                $stmt_log->bindParam(':id_blog', $id);
+                                $stmt_log->execute();
+
+                                //Tampilkan data
                                 echo '
                                     <div class="row mb-3">
                                         <div class="col-md-12">
@@ -315,7 +323,7 @@
                             if (count($popular_list) > 0) {
                                 foreach ($popular_list as $row) {
                                     $datetime_creat = date('d/m/Y H:i T', strtotime($row['datetime_creat']));
-                                    $title = htmlspecialchars($row['title_blog']);
+                                    $title = $row['title_blog'];
                                     $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row['cover'];
                                     $id_blog = $row['id_blog'];
                                     $url = $base_url . '/Blog?id=' . $id_blog;
@@ -349,7 +357,7 @@
                     <div class="popular-posts mt-4">
                         <h5 class="mb-3">New Post</h5>
                         <?php
-                            $sql_new = "SELECT id_blog, datetime_creat, title_blog, cover FROM blog ORDER BY datetime_creat DESC LIMIT 5";
+                            $sql_new = "SELECT id_blog, datetime_creat, title_blog, cover FROM blog WHERE publish=1 ORDER BY datetime_creat DESC LIMIT 5";
                             $stmt_new = $Conn->prepare($sql_new);
                             $stmt_new->execute();
                             $new_list = $stmt_new->fetchAll();
@@ -357,7 +365,7 @@
                             if (count($new_list) > 0) {
                                 foreach ($new_list as $row_post) {
                                     $datetime_creat = date('d/m/Y H:i T', strtotime($row_post['datetime_creat']));
-                                    $title = htmlspecialchars($row_post['title_blog']);
+                                    $title = $row_post['title_blog'];
                                     $cover = $base_url . 'image_proxy.php?segment=Artikel&image_name=' . $row_post['cover'];
                                     $id_blog = $row_post['id_blog'];
                                     $url = $base_url . '/Blog?id=' . $id_blog;

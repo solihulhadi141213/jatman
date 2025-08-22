@@ -83,7 +83,7 @@
                                 <div class="carousel-caption">
                                     <h5>'.$hero_title.'</h5>
                                     <h3>'.$hero_sub_title.'</h3></p>
-                                    <a href="'.$base_url.''.$hero_button_url.'" class="btn-jkn mt-3 d-inline-block show_transisi" target-link="">
+                                    <a href="'.$base_url.''.$hero_button_url.'" class="hero-jkn mt-3 d-inline-block show_transisi" target-link="">
                                         '.$hero_button_label.'
                                     </a>
                                 </div>
@@ -115,22 +115,25 @@
             </div>
         </div>
         <div class="row mb-6">
-            <div class="col-md-6 show_transisi">
-                <p>
-                    <i>
-                        <b>Visi : </b><br>
-                        <?php echo "$setting_visi_misi_visi"; ?>
-                    </i>
-                </p>
-            </div>
-            <div class="col-md-6 show_transisi">
-                <p>
-                    <i>
-                        <b>Misi :</b>
-                        <?php echo "$setting_visi_misi_misi"; ?>
-                    </i>
-                </p>
-            </div>
+            <?php
+                echo '
+                    <div class="col-md-4 mb-2 show_transisi">
+                        <i>
+                            <b>Visi : </b><br>'.$setting_visi_misi_visi.'
+                        </i>
+                    </div>
+                    <div class="col-md-4 mb-2 show_transisi">
+                        <i>
+                            <b>Misi : </b><br>'.$setting_visi_misi_misi.'
+                        </i>
+                    </div>
+                    <div class="col-md-4 mb-2 show_transisi">
+                        <i>
+                            <b>Motto : </b><br>'.$setting_visi_misi_motto.'
+                        </i>
+                    </div>
+                ';
+            ?>
         </div>
     </div>
 </div>
@@ -165,7 +168,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <a href="'.$base_url.'/Blog?id='.$berita_artikel['id_blog'].'" class="text text-decoration-none">'.$berita_artikel['title_blog'].'</a>
+                                            <a href="'.$base_url.'Blog?id='.$berita_artikel['id_blog'].'" class="text text-decoration-none">'.$berita_artikel['title_blog'].'</a>
                                         </h5>
                                         <p class="card-text">'.$date_time_creat_blog.'</p>
                                     </div>
@@ -186,23 +189,43 @@
     </div>
 </div>
 <!-- TAUTAN/LINK PENDAFTARAN -->
-<div class="section pendaftaran_antrian">
+<div class="section pendaftaran_antrian bg-light shadow-sm">
     <div class="container my-5 py-4">
-        <div class="row align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <p class="lead text-dark fw-normal show_transisi">
-                    Bergabung Dengan Jatman Jabar Dan Ikuti Berbagai Kegiatan Dan Program Menarik
+        <div class="row align-items-center p-4 rounded-3">
+            <!-- Keterangan -->
+            <div class="col-md-8 mb-3">
+                <h3 class="fw-bold text-dark mb-2">
+                    <i class="bi bi-envelope"></i> Dapatkan Update Terbaru
+                </h3>
+                <p class="mb-2 text-muted">
+                    Jangan lewatkan berita, tips, dan update terbaru dari kami. Gratis dan langsung ke email Anda.
                 </p>
+                <small class="text-secondary fst-italic">
+                    Dengan menekan tombol <b>Berlangganan</b>, Anda menyetujui syarat dan ketentuan serta 
+                    <a href="#" class="text-decoration-none">Kebijakan Privasi</a> yang berlaku.
+                </small>
             </div>
-            <div class="col-md-12 text-center mb-3">
-                <a href="/Pendaftaran" class="btn-jkn mt-3 d-inline-block show_transisi">
-                    Bergabung Sekarang
-                </a>
+
+            <!-- Form -->
+            <div class="col-md-4 mb-3">
+                <form action="javascript:void(0);" id="ProsesBerlangganan" class="p-3 bg-white rounded-3 shadow-sm">
+                    <div class="mb-3">
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Alamat Email" required>
+                    </div>
+                    <div class="mb-3" id="NotifikasiBerlangganan">
+                        <!-- Notifikasi Proses Kana Tampil Disini -->
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 tombol_berlangganan">
+                        <i class="bi bi-send"></i> Berlangganan
+                    </button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-
 <!-- GOOGLE MAP -->
  <?php
     if(!empty($arry_static['google_map'])){

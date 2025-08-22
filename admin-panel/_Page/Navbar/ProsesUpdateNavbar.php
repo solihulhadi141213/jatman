@@ -136,6 +136,8 @@
     CURLOPT_TIMEOUT => 0,
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false,
     CURLOPT_CUSTOMREQUEST => 'PUT',
     CURLOPT_POSTFIELDS =>'{
         "logo-image": "'.$base64_string.'",

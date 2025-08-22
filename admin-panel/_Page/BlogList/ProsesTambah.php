@@ -128,6 +128,8 @@
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT        => 0,
         CURLOPT_POST           => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
         CURLOPT_POSTFIELDS     => json_encode($payload, JSON_UNESCAPED_UNICODE),
         CURLOPT_HTTPHEADER     => [
             'x-token: ' . $_SESSION["x-token"],

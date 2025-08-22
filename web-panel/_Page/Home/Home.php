@@ -83,7 +83,7 @@
                                 <div class="carousel-caption">
                                     <h5>'.$hero_title.'</h5>
                                     <h3>'.$hero_sub_title.'</h3></p>
-                                    <a href="'.$base_url.''.$hero_button_url.'" class="hero-jkn mt-3 d-inline-block show_transisi" target-link="">
+                                    <a href="'.$hero_button_url.'" class="hero-jkn mt-3 d-inline-block show_transisi" target-link="">
                                         '.$hero_button_label.'
                                     </a>
                                 </div>

@@ -25,6 +25,7 @@
             "VisiMisi"                  => "_Page/VisiMisi/VisiMisi.js",
             "GoogleMap"                 => "_Page/GoogleMap/GoogleMap.js",
             "BlogList"                  => "_Page/BlogList/BlogList.js",
+            "Laman"                     => "_Page/Laman/Laman.js",
             "ApiDoc"                    => "_Page/ApiDoc/ApiDoc.js",
             "Help"                      => "_Page/Help/Help.js",
             "Aktivitas"                 => "_Page/Aktivitas/Aktivitas.js"

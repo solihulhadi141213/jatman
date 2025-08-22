@@ -146,19 +146,21 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => ''.$base_url.'/_Api/Favicon.php',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'PUT',
-  CURLOPT_POSTFIELDS =>'{
-    "180x180" : "'.$base64_string_favicon180.'",
-    "32x32" : "'.$base64_string_favicon32.'",
-    "16x16" : "'.$base64_string_favicon16.'",
-    "manifest" : "'.$manifest.'"
+    CURLOPT_URL => ''.$base_url.'/_Api/Favicon.php',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false,
+    CURLOPT_CUSTOMREQUEST => 'PUT',
+    CURLOPT_POSTFIELDS =>'{
+        "180x180" : "'.$base64_string_favicon180.'",
+        "32x32" : "'.$base64_string_favicon32.'",
+        "16x16" : "'.$base64_string_favicon16.'",
+        "manifest" : "'.$manifest.'"
 }',
   CURLOPT_HTTPHEADER => array(
     'x-token: '.$_SESSION["x-token"].'',

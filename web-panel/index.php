@@ -94,7 +94,7 @@
                                         $submenu=$arry_static_list['submenu'];
                                         if(empty(count($submenu))){
                                             echo '
-                                                <li class="nav-item"><a class="nav-link" href="'.$base_url.''.$menu_url.'">'.$menu_label.'</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="'.$menu_url.'">'.$menu_label.'</a></li>
                                             ';
                                         }else{
                                             echo '<li class="nav-item">';
@@ -105,7 +105,7 @@
                                             foreach($submenu as $submenu_list){
                                                 $submenu_label=$submenu_list['label'];
                                                 $submenu_url=$submenu_list['url'];
-                                                echo '<a class="nav-link" href="'.$base_url.''.$submenu_url.'">'.$submenu_label.'</a>';
+                                                echo '<a class="nav-link" href="'.$submenu_url.'">'.$submenu_label.'</a>';
                                             }
                                             echo '  </div>';
                                             echo '</li>';
@@ -168,9 +168,8 @@
                 include "_Page/Galeri/Galeri.php";
             }elseif($Page=="Blog"){
                 include "_Page/Blog/Blog.php";
-            }elseif($Page=="Dokter"){
-                include "_Page/Dokter/Dokter.php";
-                include "_Page/Dokter/ModalDokter.php";
+            }elseif($Page=="Laman"){
+                include "_Page/Laman/Laman.php";
             }else{
                 include "_Page/Error/page-not-found.php";
             }

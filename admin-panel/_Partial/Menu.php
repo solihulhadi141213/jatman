@@ -125,15 +125,20 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($PageMenu=="BlogList"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#anggota-nav" data-bs-toggle="collapse" href="javascript:void(0);">
+            <a class="nav-link <?php if($PageMenu=="BlogList"||$PageMenu=="Laman"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "";}else{echo "collapsed";} ?>" data-bs-target="#anggota-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="bi bi-newspaper"></i>
                 <span>Blog Posting</span>
                 <i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="anggota-nav" class="nav-content collapse <?php if($PageMenu=="BlogList"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
+            <ul id="anggota-nav" class="nav-content collapse <?php if($PageMenu=="BlogList"||$PageMenu=="Laman"||$PageMenu=="Label"||$PageMenu=="BlogStatistik"){echo "show";} ?>" data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="index.php?Page=BlogList" class="<?php if($PageMenu=="BlogList"){echo "active";} ?>">
                         <i class="bi bi-circle"></i><span>Blog List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?Page=Laman" class="<?php if($PageMenu=="Laman"){echo "active";} ?>">
+                        <i class="bi bi-circle"></i><span>Laman Mandiri</span>
                     </a>
                 </li>
                 <li>

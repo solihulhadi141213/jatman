@@ -21,7 +21,11 @@ if (!empty($_GET['segment']) && !empty($_GET['image_name'])) {
                     if($segment == "Hero"){
                         $folder="_component";
                     }else{
-                        $folder="_Error";
+                        if($segment == "Laman"){
+                            $folder="_Laman";
+                        }else{
+                            $folder="_Error";
+                        }
                     }
                 }
             }

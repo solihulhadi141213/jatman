@@ -71,13 +71,12 @@
     }
 
     //Buatkan Variabelnya
-    $title_visi_misi=validateAndSanitizeInput($_POST['title_visi_misi']);
-    $visi = addslashes($_POST['visi']);
-    $visi=validateAndSanitizeInput($visi);
-    $misi = addslashes($_POST['misi']);
+    $title_visi_misi=$_POST['title_visi_misi'];
+    $visi = $_POST['visi'];
+    $misi = $_POST['misi'];
     // $misi=validateAndSanitizeInput($misi);
-    $motto = addslashes($_POST['motto']);
-    $motto=validateAndSanitizeInput($motto);
+    $motto = $_POST['motto'];
+    
 
     // Siapkan payload array
     $payload = [
@@ -100,6 +99,8 @@
         CURLOPT_TIMEOUT        => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
         CURLOPT_CUSTOMREQUEST  => 'PUT',
         CURLOPT_POSTFIELDS     => $jsonPayload,
         CURLOPT_HTTPHEADER     => [

@@ -66,7 +66,7 @@
     //Buat Variabel
     $id_blog  = validateAndSanitizeInput($_POST['id_blog']);
     $order_id = validateAndSanitizeInput($_POST['order_id']);
-    $isi_content= validateAndSanitizeInput($_POST['isi_content']);
+    $isi_content= $_POST['isi_content'];
     $type_konten="html";
 
     //Buat playload
@@ -88,6 +88,8 @@
     CURLOPT_TIMEOUT => 0,
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => false,
     CURLOPT_CUSTOMREQUEST => 'PUT',
     CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE),
     CURLOPT_HTTPHEADER => array(

@@ -64,5 +64,5 @@
         'total_blog' => $total_blog,
         'total_laman' => $total_laman,
         'total_newslater' => $total_newslater
-    ]);
+    ],200);
 ?>

@@ -44,7 +44,7 @@
                                             <div class="d-flex">
                                                 <h5>Total Hit</h5>
                                             </div>
-                                            <h4 class="text-muted">10.768.900</h4>
+                                            <h4 class="text-muted" id="total_hit">-</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                             <div class="d-flex">
                                                 <h5>Blog Posting</h5>
                                             </div>
-                                            <h4 class="text-muted">100</h4>
+                                            <h4 class="text-muted" id="total_blog">-</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                             <div class="d-flex">
                                                 <h5>Laman Mandiri</h5>
                                             </div>
-                                            <h4 class="text-muted">100</h4>
+                                            <h4 class="text-muted" id="total_laman">-</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                             <div class="d-flex">
                                                 <h5>Newslatter</h5>
                                             </div>
-                                            <h4 class="text-muted">20.000</h4>
+                                            <h4 class="text-muted" id="total_newslater">-</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -116,9 +116,17 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <b class="card-title">
-                                Simpanan & Pinjaman Anggota Thn <?php echo date ('Y'); ?>
-                            </b>
+                            <div class="row">
+                                <div class="col-10">
+                                    <b class="card-title">Grafik Pemirsa</b>
+                                </div>
+                                <div class="col-2 text-end">
+                                    <button type="button" class="btn btn-md btn-secondary btn-floating"  data-bs-toggle="modal" data-bs-target="#ModalFilterGrafik">
+                                        <i class="bi bi-filter"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="card-body">
                             <h5 class="card-title" id="NamaTitleData"></h5>
@@ -129,84 +137,10 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <b class="card-title"># Pemberitahuan Sistem</b> 
+                            <b class="card-title"># Popular Post</b> 
                         </div>
-                        <div class="card-body" id="ShowPemberitahuanSistem">
+                        <div class="card-body" id="ShowPopularPost">
                             <!-- Menampilkan Pemberitahuan Sistem -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <b class="card-title">
-                                Anggota / <small class="text text-muted">5 Record terbaru</small>
-                            </b>
-                        </div>
-                        <div class="card-body">
-                            <div class="activity" id="ShowAnggotaTerbaru">
-                                <!-- Menampilkan "ShowAnggotaTerbaru" -->
-                            </div>
-                        </div>
-                        <div class="card-footer text-end">
-                            <a href="index.php?Page=Anggota" 
-                                class="btn btn-secondary btn-sm btn-floating" 
-                                data-bs-toggle="tooltip" 
-                                data-bs-placement="top" 
-                                data-bs-custom-class="custom-tooltip" 
-                                data-bs-title="Lihat Selengkapnya Di Halaman Anggota" >
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <b class="card-title">
-                                Simpanan / <small class="text text-muted">5 Record terbaru</small>
-                            </b>
-                        </div>
-                        <div class="card-body">
-                            <div class="activity" id="ShowSimpananTerbaru">
-                                <!-- Menampilkan "ShowSimpananTerbaru"  -->
-                            </div>
-                        </div>
-                        <div class="card-footer text-end">
-                            <a href="index.php?Page=Tabungan" 
-                                class="btn btn-secondary btn-sm btn-floating" 
-                                data-bs-toggle="tooltip" 
-                                data-bs-placement="top" 
-                                data-bs-custom-class="custom-tooltip" 
-                                data-bs-title="Lihat Selengkapnya Di Halaman Simpanan" >
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <b class="card-title">
-                                Pinjaman / <small class="text text-muted">5 Record terbaru</small>
-                            </b>
-                        </div>
-                        <div class="card-body">
-                            <div class="activity" id="ShowPinjamanTerbaru">
-                                <!-- Menampilkan Pinjaman Terbaru -->
-                            </div>
-                        </div>
-                        <div class="card-footer text-end">
-                            <a href="index.php?Page=Pinjaman" 
-                                class="btn btn-secondary btn-sm btn-floating" 
-                                data-bs-toggle="tooltip" 
-                                data-bs-placement="top" 
-                                data-bs-custom-class="custom-tooltip" 
-                                data-bs-title="Lihat Selengkapnya Di Halaman Pinjaman" >
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

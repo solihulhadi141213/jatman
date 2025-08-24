@@ -1,100 +1,146 @@
 
-// Fungsi Untuk Menampilkan Pemberitahuan Sistem
-function ShowPemberitahuanSistem() {
+// Fungsi Untuk Menampilkan Informasi Dashboard
+function GetDashboardInformation() {
     $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowPemberitahuanSistem.php',
+        type        : 'POST',
+        url         : '_Page/Dashboard/ShowDashboard.php',
+        dataType    : "JSON",
         success: function(response) {
-            $('#ShowPemberitahuanSistem').hide().html(response).fadeIn(500);
-            ShowAnggotaTerbaru();
+            if (response.status === "success") {
+                var total_hit=response.total_hit;
+                var total_blog=response.total_blog;
+                var total_laman=response.total_laman;
+                var total_newslater=response.total_newslater;
+            }else{
+                var total_hit="Error";
+                var total_blog="Error";
+                var total_laman="Error";
+                var total_newslater="Error";
+            }
+            //Tempelkan Ke masing-masing Element
+            $('#total_hit').html(total_hit);
+            $('#total_blog').html(total_blog);
+            $('#total_laman').html(total_laman);
+            $('#total_newslater').html(total_newslater);
         }
     });
 }
-// Fungsi Untuk Menampilkan Anggota Terbaru
-function ShowAnggotaTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowAnggotaTerbaru.php',
-        success: function(response) {
-            $('#ShowAnggotaTerbaru').hide().html(response).fadeIn(500);
-            ShowSimpananTerbaru();
-        }
-    });
-}
-// Fungsi Untuk Menampilkan Simpanan Terbaru
-function ShowSimpananTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowSimpananTerbaru.php',
-        success: function(response) {
-            $('#ShowSimpananTerbaru').hide().html(response).fadeIn(500);
-            ShowPinjamanTerbaru();
-        }
-    });
-}
-// Fungsi Untuk Menampilkan Pinjaman Terbaru
-function ShowPinjamanTerbaru() {
-    $.ajax({
-        type: 'POST',
-        url: '_Page/Dashboard/ShowPinjamanTerbaru.php',
-        success: function(response) {
-            $('#ShowPinjamanTerbaru').hide().html(response).fadeIn(500);
-        }
-    });
+
+//Fungsi Untuk Handle toggle Periode
+function togglePeriode() {
+    var periode = $("#periode").val();
+    if (periode === "Tahun") {
+        $("#FormTahun").closest(".row").show();
+        $("#FormBulan").hide();
+    } else if (periode === "Bulan") {
+        $("#FormTahun").show();
+        $("#FormBulan").show();
+    }
 }
 
 // Fungsi Untuk Menampilkan Grafik
-function ShowGrafikSiimpanPinjam() {
-    // Fungsi untuk mengambil data dari file JSON
-    $.getJSON("_Page/Dashboard/GrafikTransaksi.json", function (data) {
-        // Mengolah data untuk ApexCharts
-        const categories = data.map(item => item.x);
-        const simpananSeries = data.map(item => parseFloat(item.ySimpanan));
-        const pinjamanSeries = data.map(item => parseFloat(item.yPinjaman));
+function GetGraphData() {
+    var ProsesFilterGrafik = $('#ProsesFilterGrafik').serialize();
+    $.ajax({
+        type        : 'POST',
+        url         : '_Page/Dashboard/RequestGraphData.php',
+        data        : ProsesFilterGrafik,
+        dataType    : "JSON",
+        success: function(response) {
+            if(response.status === "success") {
+                var categories = [];
+                var values = [];
 
-        // Konfigurasi grafik
-        var options = {
-            chart: {
-                type: 'bar',
-                height: 400
-            },
-            series: [
-                {
-                    name: 'Simpanan',
-                    data: simpananSeries
-                },
-                {
-                    name: 'Pinjaman',
-                    data: pinjamanSeries
-                }
-            ],
-            xaxis: {
-                categories: categories
-            },
-            yaxis: {
-                labels: {
-                    formatter: function (value) {
-                        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+                // Ambil periode dari form agar tahu tampil per Tahun / Bulan
+                var periode = $('#periode').val(); 
+                var judul = "";
+
+                if(periode === "Tahun"){
+                    var tahun = $('#tahun').val(); // ambil tahun dari form
+                    judul = "Periode " + tahun;
+
+                    // Loop data per bulan
+                    $.each(response.data, function(i, item){
+                        categories.push(item.bulan_label);
+                        values.push(item.viewer);
+                    });
+                }else if(periode === "Bulan"){
+                    var tahun = $('#tahun').val(); 
+                    var bulan = $('#bulan').val(); 
+                    // Array nama bulan (bisa Indonesia/Inggris sesuai kebutuhan)
+                    var namaBulan = [
+                        "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                    ];
+                    var bulanInt = parseInt(bulan); // ubah ke integer agar index sesuai
+                    if (bulanInt >= 1 && bulanInt <= 12) {
+                        judul = namaBulan[bulanInt] + " " + tahun;
                     }
+                    judul = "Periode " + judul;
+
+                    // Loop data per hari
+                    $.each(response.data, function(i, item){
+                        categories.push(item.tanggal);
+                        values.push(item.viewer);
+                    });
                 }
-            },
-            tooltip: {
-                y: {
-                    formatter: function (value) {
-                        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+
+                // Konfigurasi chart
+                var options = {
+                    chart: {
+                        type: 'line',
+                        height: 350
+                    },
+                    series: [{
+                        name: 'Viewer',
+                        data: values
+                    }],
+                    xaxis: {
+                        categories: categories
+                    },
+                    yaxis: {
+                        labels: {
+                            show: false // sembunyikan angka di garis Y
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false // hilangkan label angka di titik grafik
+                    },
+                    colors: ['#4154f1'],
+                    title: {
+                        text: judul,
+                        align: 'center'
+                    },
+                    stroke: {
+                        curve: 'smooth'
                     }
-                }
-            },
-            dataLabels: {
-                enabled: false // Menonaktifkan label nilai pada bar
+                };
+
+                // Render chart
+                $("#chart").html(""); // reset isi div chart
+                var chart = new ApexCharts(document.querySelector("#chart"), options);
+                chart.render();
+            } else {
+                $("#chart").html("<div class='alert alert-danger'>"+response.message+"</div>");
             }
-        };
-
-        // Inisialisasi grafik
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+        },
+        error: function(xhr, status, error){
+            $("#chart").html("<div class='alert alert-danger'>Gagal mengambil data grafik</div>");
+        }
     });
 }
+
+//Fungsi Untuk Menampilkan Popular Post
+function ShowPopularPost() {
+    $.ajax({
+        type        : 'POST',
+        url         : '_Page/Dashboard/ListPopularPost.php',
+        success: function(response) {
+            $('#ShowPopularPost').html(response);
+        }
+    });
+}
+
 
 // Fungsi untuk menampilkan jam digital
 function tampilkanJam() {
@@ -118,10 +164,29 @@ function tampilkanTanggal() {
 //Ketika Halaman Dashboard MunculPertama Kali
 $(document).ready(function () {
     //Menampilkan Data Pertama Kali
-    ShowGrafikSiimpanPinjam();
-
+    GetDashboardInformation();
+    GetGraphData();
+    ShowPopularPost();
+    
     //Jam Menarik
     tampilkanTanggal(); // Tampilkan tanggal saat halaman dimuat
     tampilkanJam();     // Tampilkan jam pertama kali
     setInterval(tampilkanJam, 1000); // Perbarui jam setiap detik
+    setInterval(tampilkanTanggal, 3600000); // Perbarui tanggal setiap jam
+
+    // Jalankan saat pertama kali halaman dimuat
+    togglePeriode();
+
+    // Jalankan setiap kali select periode berubah
+    $("#periode").change(function() {
+        togglePeriode();
+    });
+
+    //Kondisi saat filter di submit
+    $('#ProsesFilterGrafik').submit(function(){
+       GetGraphData();
+
+       //Tutup modal
+       $('#ModalFilterGrafik').modal('hide');
+    });
 });
